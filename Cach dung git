@@ -1,5 +1,10 @@
+// push code len
 git add -A
 git commit -m "Mo ta commit"
 git push https://github.com/duongnguyen2802/QuanLyHangHoa.git master
 
+// lay code ve
 git pull https://github.com/duongnguyen2802/QuanLyHangHoa.git master
+
+// xem lich su
+git log --oneline
