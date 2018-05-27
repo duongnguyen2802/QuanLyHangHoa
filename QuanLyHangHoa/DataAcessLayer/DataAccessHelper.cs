@@ -117,24 +117,48 @@ namespace QuanLyHangHoa.DataAcessLayer
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-               
+                MySqlCommand cmd = new MySqlCommand(query, connection);          
                 MySqlParameter p = new MySqlParameter();
-             
-
                 //Execute command
                 cmd.ExecuteNonQuery();
-
                 //close connection
                 this.CloseConnection();
             }
         }
 
 
+        public string getMaKH(string sql, string tiento, int dodaiMa)
+        {
+            string ma = string.Empty;
+            DataTable dt = this.GetData(sql);
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                ma = ma.PadLeft(dodaiMa - tiento.Length - 1, '0');
+                ma = tiento + ma + "1";
+            }
 
-        
+            foreach (DataRow item in dt.Rows)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append(item[0].ToString());
+                ma = sb.Replace(tiento, "").ToString().Trim();
+                int temp = Convert.ToInt32(ma);
+                if (temp > 0)
+                {
+
+                    ma = Convert.ToString(temp + 1);
+                    ma = ma.PadLeft(dodaiMa - tiento.Length, '0');
+                    ma = tiento + ma;
+                }
+            }
+
+            return ma;
 
 
+
+        }
+
+        //check null
 
     }
 }

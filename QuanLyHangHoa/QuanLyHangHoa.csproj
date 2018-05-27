@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\KhacHangDAO.cs" />
     <Compile Include="DataAcessLayer\DataAccessHelper.cs" />
+    <Compile Include="Entities\KhachHang.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

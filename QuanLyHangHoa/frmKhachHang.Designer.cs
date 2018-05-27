@@ -99,6 +99,7 @@
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(173, 20);
             this.txtDienThoai.TabIndex = 2;
+            this.txtDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienThoai_KeyPress);
             // 
             // label4
             // 
@@ -150,6 +151,7 @@
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -159,6 +161,7 @@
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -180,9 +183,9 @@
             this.dienthoai,
             this.email,
             this.diachi});
-            this.dgvKhachHang.Location = new System.Drawing.Point(1, 247);
+            this.dgvKhachHang.Location = new System.Drawing.Point(1, 224);
             this.dgvKhachHang.Name = "dgvKhachHang";
-            this.dgvKhachHang.Size = new System.Drawing.Size(615, 150);
+            this.dgvKhachHang.Size = new System.Drawing.Size(615, 173);
             this.dgvKhachHang.TabIndex = 9;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             // 
@@ -250,6 +253,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "frmKhachHang";
             this.Text = "Quản lý khách hàng";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
