@@ -28,12 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvHangHoa
+            // 
+            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangHoa.Location = new System.Drawing.Point(-2, 116);
+            this.dgvHangHoa.Name = "dgvHangHoa";
+            this.dgvHangHoa.Size = new System.Drawing.Size(430, 150);
+            this.dgvHangHoa.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(328, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(426, 264);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvHangHoa);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvHangHoa;
+        private System.Windows.Forms.Button button1;
     }
 }
 

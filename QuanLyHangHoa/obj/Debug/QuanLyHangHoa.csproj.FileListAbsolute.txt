@@ -1,0 +1,11 @@
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\bin\Debug\QuanLyHangHoa.exe
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\bin\Debug\QuanLyHangHoa.pdb
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\bin\Debug\MySql.Data.dll
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\bin\Debug\MySql.Data.xml
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.csprojResolveAssemblyReference.cache
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.Form1.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.Properties.Resources.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.csproj.GenerateResource.Cache
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.exe
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.pdb
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmKhachHang.resources
