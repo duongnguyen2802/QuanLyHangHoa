@@ -24,7 +24,7 @@ namespace QuanLyHangHoa
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (!this.KiemTraDuLieuTextbox()) 
+            if (!this.KiemTraDuLieuTextbox())
             {
                 MessageBox.Show("Không để trống dữ liệu!", "Thông báo");
                 return;
@@ -53,7 +53,7 @@ namespace QuanLyHangHoa
             bool kiemtra = dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sqlInsert, parameters, values);
             if (kiemtra)
             {
-                MessageBox.Show("Thêm khách hàng thành công!", "Thông báo",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.LayTatCaKhachHang();
                 this.LamMoi();
                 this.getMaxMaKH();
@@ -92,6 +92,7 @@ namespace QuanLyHangHoa
             {
                 if (item is TextBox) item.Text = String.Empty;
             }
+            this.getMaxMaKH();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -129,7 +130,7 @@ namespace QuanLyHangHoa
         {
             if (!this.KiemTraDuLieuTextbox())
             {
-                MessageBox.Show("Không để trống dữ liệu!", "Thông báo",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không để trống dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             string sqlUpdate = "UPDATE khachhang set TenKH = @TenKH, DiaChi= @DiaChi, DienThoai = @DienThoai, Email = @Email WHERE MaKH = @MaKH ";
@@ -170,29 +171,33 @@ namespace QuanLyHangHoa
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
-            string sqlDelete = "DELETE FROM  khachhang where MaKH = @MaKH ";
-            //string sqlInsert = "INSERT INTO khachhang values(@MaKH,@TenKH,@DiaChi,@DienThoai,@Email)";
-
-            List<string> parameters = new List<string>();
-            List<object> values = new List<object>();
-
-            //khoi tao tham so va gia tri
-            parameters.Add("MaKH");
-            values.Add(txtMaKH.Text);
-
-            bool kiemtra = dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sqlDelete, parameters, values);
-            if (kiemtra)
+            DialogResult confirm = MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
             {
-                MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.LayTatCaKhachHang();
-                this.LamMoi();
-                this.getMaxMaKH();
 
-            }
-            else
-            {
-                MessageBox.Show("Xóa nhật thất bại!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                string sqlDelete = "DELETE FROM  khachhang where MaKH = @MaKH ";
+                //string sqlInsert = "INSERT INTO khachhang values(@MaKH,@TenKH,@DiaChi,@DienThoai,@Email)";
+
+                List<string> parameters = new List<string>();
+                List<object> values = new List<object>();
+
+                //khoi tao tham so va gia tri
+                parameters.Add("MaKH");
+                values.Add(txtMaKH.Text);
+
+                bool kiemtra = dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sqlDelete, parameters, values);
+                if (kiemtra)
+                {
+                    MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.LayTatCaKhachHang();
+                    this.LamMoi();
+                    this.getMaxMaKH();
+
+                }
+                else
+                {
+                    MessageBox.Show("Xóa nhật thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -202,7 +207,7 @@ namespace QuanLyHangHoa
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             if (e.Handled)
             {
-                MessageBox.Show("Chỉ nhập số!", "Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chỉ nhập số!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

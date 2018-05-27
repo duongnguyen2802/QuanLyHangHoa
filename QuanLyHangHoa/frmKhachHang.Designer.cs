@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,16 +134,6 @@
             this.txtDiaChi.Size = new System.Drawing.Size(465, 20);
             this.txtDiaChi.TabIndex = 4;
             // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(78, 181);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 5;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(176, 181);
@@ -221,21 +212,35 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label6.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Navy;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(617, 30);
+            this.label6.Size = new System.Drawing.Size(617, 33);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Quản lý khách hàng";
+            this.label6.Text = "QUẢN LÝ KHÁCH HÀNG";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Honeydew;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(77, 181);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(93, 23);
+            this.btnThem.TabIndex = 5;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(617, 392);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvKhachHang);
@@ -253,6 +258,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmKhachHang";
             this.Text = "Quản lý khách hàng";
