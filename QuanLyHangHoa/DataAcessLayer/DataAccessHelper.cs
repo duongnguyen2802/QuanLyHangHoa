@@ -77,7 +77,11 @@ namespace QuanLyHangHoa.DataAcessLayer
             }
         }
 
-
+        /// <summary>
+        /// Thực hiện câu lệnh select
+        /// </summary>
+        /// <param name="sqlSelect">câu lệnh sql select</param>
+        /// <returns></returns>
         public DataTable GetData(string sqlSelect)
         {
             DataTable dt = new DataTable();

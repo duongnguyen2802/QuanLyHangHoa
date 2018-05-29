@@ -16,3 +16,10 @@ F:\MyDoc\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmKh
 F:\MyDoc\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmMain.resources
 F:\MyDoc\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.Properties.Resources.resources
 F:\MyDoc\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.csproj.GenerateResource.Cache
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmDangNhap.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmMain.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmDangNhap2.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmnhapdang.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmNhomHangHoa.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmQuanLyNhaCungCap.resources
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmQuanLyHangHoa.resources

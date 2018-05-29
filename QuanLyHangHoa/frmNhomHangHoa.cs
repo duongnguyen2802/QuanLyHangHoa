@@ -1,0 +1,142 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using QuanLyHangHoa.DAO;
+using QuanLyHangHoa.Entities;
+
+namespace QuanLyHangHoa
+{
+    public partial class frmNhomHangHoa : Form
+    {
+        public frmNhomHangHoa()
+        {
+            InitializeComponent();
+        }
+        NhomHangHoaDAO nhomhanghoaDAO = new NhomHangHoaDAO();
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            //kiểm tra dữ liệu null
+
+            //nếu không nhập tên nhóm hàng hóa thì thông báo nhập lại
+            if (string.IsNullOrEmpty(txtTenNhom.Text))
+            {
+                MessageBox.Show("Tên nhóm hàng hóa không để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                //đưa con trỏ về textbox tên nhóm hàng hóa
+                txtTenNhom.Focus();
+
+                return;
+            }
+            else
+            {
+
+
+                NhomHangHoa nhomhanghoa = new NhomHangHoa();
+                //gán tên hàng hóa từ textbox vào đối tượng nhomhanghoa
+                nhomhanghoa.Tennhomhanghoa = txtTenNhom.Text;
+
+                //thêm nhóm hàng hóa vào db
+                bool kiemtra = nhomhanghoaDAO.ThemNhomHangHoa(nhomhanghoa);
+
+                string chuoithongbao = "Thêm nhóm hàng hóa thành công!";
+                if (!kiemtra)
+                {
+                    chuoithongbao = "Thêm nhóm hàng hóa thất bại";
+                    this.LamMoi();
+                }
+                MessageBox.Show(chuoithongbao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //hiển thị danh sách nhóm hàng hóa lên datagridview
+                dgvNhomHangHoa.DataSource = nhomhanghoaDAO.LayTatCaNhomHangHoa();
+
+            }
+        }
+
+        private void frmNhomHangHoa_Load(object sender, EventArgs e)
+        {
+            dgvNhomHangHoa.DataSource = nhomhanghoaDAO.LayTatCaNhomHangHoa();
+        }
+
+        private void LamMoi()
+        {
+            txtMaNhom.Text = string.Empty;
+            txtTenNhom.Text = string.Empty;
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            this.LamMoi();
+        }
+
+        private void dgvNhomHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaNhom.Text = dgvNhomHangHoa.CurrentRow.Cells[0].Value.ToString();
+            txtTenNhom.Text = dgvNhomHangHoa.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTenNhom.Text))
+            {
+                MessageBox.Show("Tên nhóm hàng hóa không để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                //đưa con trỏ về textbox tên nhóm hàng hóa
+                txtTenNhom.Focus();
+
+                return;
+            }
+
+            NhomHangHoa nhomhanghoa = new NhomHangHoa(Convert.ToInt32(txtMaNhom.Text), txtTenNhom.Text);
+            //gán dữ liệu vào đối tượng
+            //thêm nhóm hàng hóa vào db
+            bool kiemtra = nhomhanghoaDAO.CapNhatNhomHangHoa(nhomhanghoa);
+            string chuoithongbao = "Cập nhật dữ liệu thành công!";
+            if (!kiemtra)
+            {
+                chuoithongbao = "Cập nhật dữ liệu thất bại";
+                this.LamMoi();
+            }
+            MessageBox.Show(chuoithongbao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //hiển thị danh sách nhóm hàng hóa lên datagridview
+            dgvNhomHangHoa.DataSource = nhomhanghoaDAO.LayTatCaNhomHangHoa();
+        }
+
+        private void btnXoas_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaNhom.Text))
+            {
+                MessageBox.Show("Vui lòng chọn nhóm để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult xacnhan = MessageBox.Show("Bạn có muốn xóa " + txtTenNhom.Text + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (xacnhan == DialogResult.Yes)
+            {
+
+                NhomHangHoa nhomhanghoa = new NhomHangHoa();
+                //gán dữ liệu vào đối tượng
+                //thêm nhóm hàng hóa vào db
+                nhomhanghoa.Manhomhanghoa = Convert.ToInt32(txtMaNhom.Text);
+                bool kiemtra = nhomhanghoaDAO.XoaNhomHangHoa(nhomhanghoa);
+                string chuoithongbao = "Xóa dữ liệu thành công!";
+                if (!kiemtra)
+                {
+                    chuoithongbao = "Xóa dữ liệu thất bại";
+                    this.LamMoi();
+                }
+                MessageBox.Show(chuoithongbao, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //hiển thị danh sách nhóm hàng hóa lên datagridview
+                dgvNhomHangHoa.DataSource = nhomhanghoaDAO.LayTatCaNhomHangHoa();
+            }
+        }
+
+
+    }
+}

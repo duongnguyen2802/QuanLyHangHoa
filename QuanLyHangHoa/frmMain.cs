@@ -36,5 +36,29 @@ namespace QuanLyHangHoa
             frmDangNhap dangnhap = new frmDangNhap();
             dangnhap.ShowDialog();
         }
+
+        private void mnuQuanLyHangHoa_Click(object sender, EventArgs e)
+        {
+            frmNhomHangHoa nhomhanghoa = new frmNhomHangHoa();
+            nhomhanghoa.ShowDialog();
+        }
+
+        private void mnuQuanLyNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frmQuanLyNhaCungCap nhacungcap = new frmQuanLyNhaCungCap();
+            nhacungcap.ShowDialog();
+        }
+
+        private void mnuQuanLyKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang khachang = new frmKhachHang();
+            khachang.ShowDialog();
+        }
+
+        private void mnuQLHangHoa_Click(object sender, EventArgs e)
+        {
+            frmQuanLyHangHoa quanlyhanghoa = new frmQuanLyHangHoa();
+            quanlyhanghoa.ShowDialog();
+        }
     }
 }

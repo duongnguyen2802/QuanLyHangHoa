@@ -48,8 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\KhacHangDAO.cs" />
+    <Compile Include="DAO\NhaCungCapDAO.cs" />
+    <Compile Include="DAO\NhomHangHoaDAO.cs" />
     <Compile Include="DataAcessLayer\DataAccessHelper.cs" />
     <Compile Include="Entities\KhachHang.cs" />
+    <Compile Include="Entities\NhaCungCap.cs" />
+    <Compile Include="Entities\NhomHangHoa.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +65,12 @@
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap2.Designer.cs">
+      <DependentUpon>frmDangNhap2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -74,6 +84,30 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmnhapdang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmnhapdang.Designer.cs">
+      <DependentUpon>frmnhapdang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhomHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhomHangHoa.Designer.cs">
+      <DependentUpon>frmNhomHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyHangHoa.Designer.cs">
+      <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNhaCungCap.Designer.cs">
+      <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -82,11 +116,26 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap2.resx">
+      <DependentUpon>frmDangNhap2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmnhapdang.resx">
+      <DependentUpon>frmnhapdang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhomHangHoa.resx">
+      <DependentUpon>frmNhomHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyHangHoa.resx">
+      <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNhaCungCap.resx">
+      <DependentUpon>frmQuanLyNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
