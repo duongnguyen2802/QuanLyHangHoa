@@ -47,10 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\HangHoaDAO.cs" />
     <Compile Include="DAO\KhacHangDAO.cs" />
     <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="DAO\NhomHangHoaDAO.cs" />
     <Compile Include="DataAcessLayer\DataAccessHelper.cs" />
+    <Compile Include="Entities\HangHoa.cs" />
     <Compile Include="Entities\KhachHang.cs" />
     <Compile Include="Entities\NhaCungCap.cs" />
     <Compile Include="Entities\NhomHangHoa.cs" />

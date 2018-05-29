@@ -139,18 +139,20 @@ namespace QuanLyHangHoa.DataAcessLayer
             {
                 ma = ma.PadLeft(dodaiMa - tiento.Length - 1, '0');
                 ma = tiento + ma + "1";
+                return ma;
             }
-
+            int max =0;
             foreach (DataRow item in dt.Rows)
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append(item[0].ToString());
                 ma = sb.Replace(tiento, "").ToString().Trim();
                 int temp = Convert.ToInt32(ma);
-                if (temp > 0)
+                if (temp > max) max = temp;
+                if (max > 0)
                 {
 
-                    ma = Convert.ToString(temp + 1);
+                    ma = Convert.ToString(max + 1);
                     ma = ma.PadLeft(dodaiMa - tiento.Length, '0');
                     ma = tiento + ma;
                 }

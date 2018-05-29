@@ -13,7 +13,8 @@ namespace QuanLyHangHoa.DAO
         DataAccessHelper dataAccessHelper = new DataAccessHelper();
         public DataTable LayTatCaNhomHangHoa()
         {
-            return dataAccessHelper.GetData("SELECT * FROM NHOMHANGHOA;");
+            
+            return dataAccessHelper.GetData("select * from nhomhanghoa");
         }
 
         public bool ThemNhomHangHoa(NhomHangHoa nhomhanghoa)
