@@ -78,42 +78,47 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(128, 142);
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThem.Location = new System.Drawing.Point(130, 142);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(68, 23);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnSua.Location = new System.Drawing.Point(230, 142);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(68, 23);
             this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoas
             // 
+            this.btnXoas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXoas.Location = new System.Drawing.Point(336, 142);
             this.btnXoas.Name = "btnXoas";
-            this.btnXoas.Size = new System.Drawing.Size(75, 23);
+            this.btnXoas.Size = new System.Drawing.Size(68, 23);
             this.btnXoas.TabIndex = 4;
             this.btnXoas.Text = "Xóa";
-            this.btnXoas.UseVisualStyleBackColor = true;
+            this.btnXoas.UseVisualStyleBackColor = false;
             this.btnXoas.Click += new System.EventHandler(this.btnXoas_Click);
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnLamMoi.Location = new System.Drawing.Point(432, 142);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoi.Size = new System.Drawing.Size(68, 23);
             this.btnLamMoi.TabIndex = 5;
             this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dgvNhomHangHoa
@@ -122,9 +127,10 @@
             this.dgvNhomHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.manhomhanghoa,
             this.tennhomhanghoa});
-            this.dgvNhomHangHoa.Location = new System.Drawing.Point(1, 195);
+            this.dgvNhomHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvNhomHangHoa.Location = new System.Drawing.Point(0, 192);
             this.dgvNhomHangHoa.Name = "dgvNhomHangHoa";
-            this.dgvNhomHangHoa.Size = new System.Drawing.Size(540, 109);
+            this.dgvNhomHangHoa.Size = new System.Drawing.Size(541, 109);
             this.dgvNhomHangHoa.TabIndex = 6;
             this.dgvNhomHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhomHangHoa_CellClick);
             // 
@@ -143,10 +149,10 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.ForeColor = System.Drawing.Color.Navy;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(541, 36);
@@ -158,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(541, 301);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvNhomHangHoa);

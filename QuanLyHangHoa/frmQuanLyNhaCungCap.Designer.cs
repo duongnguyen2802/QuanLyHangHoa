@@ -54,10 +54,10 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.ForeColor = System.Drawing.Color.Navy;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(638, 36);
@@ -148,42 +148,46 @@
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnLamMoi.Location = new System.Drawing.Point(431, 173);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
             this.btnLamMoi.TabIndex = 8;
             this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoas
             // 
+            this.btnXoas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXoas.Location = new System.Drawing.Point(335, 173);
             this.btnXoas.Name = "btnXoas";
             this.btnXoas.Size = new System.Drawing.Size(75, 23);
             this.btnXoas.TabIndex = 7;
             this.btnXoas.Text = "Xóa";
-            this.btnXoas.UseVisualStyleBackColor = true;
+            this.btnXoas.UseVisualStyleBackColor = false;
             this.btnXoas.Click += new System.EventHandler(this.btnXoas_Click);
             // 
             // btnSua
             // 
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnSua.Location = new System.Drawing.Point(229, 173);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnThem.Location = new System.Drawing.Point(127, 173);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvNhaCC
@@ -196,9 +200,10 @@
             this.dienthoai,
             this.email,
             this.diachi});
-            this.dgvNhaCC.Location = new System.Drawing.Point(4, 221);
+            this.dgvNhaCC.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvNhaCC.Location = new System.Drawing.Point(0, 215);
             this.dgvNhaCC.Name = "dgvNhaCC";
-            this.dgvNhaCC.Size = new System.Drawing.Size(632, 98);
+            this.dgvNhaCC.Size = new System.Drawing.Size(638, 120);
             this.dgvNhaCC.TabIndex = 9;
             this.dgvNhaCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaCC_CellClick);
             // 
@@ -236,6 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(638, 335);
             this.Controls.Add(this.dgvNhaCC);
             this.Controls.Add(this.btnLamMoi);

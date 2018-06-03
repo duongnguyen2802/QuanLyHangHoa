@@ -39,6 +39,7 @@
             this.mnuQuanLyNhaCungCap = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyKhachHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQLHangHoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +96,8 @@
             this.mnuQuanLyHangHoa,
             this.mnuQuanLyNhaCungCap,
             this.mnuQuanLyKhachHang,
-            this.mnuQLHangHoa});
+            this.mnuQLHangHoa,
+            this.mnuQuanLyNhanVien});
             this.mnuQuanly.Name = "mnuQuanly";
             this.mnuQuanly.Size = new System.Drawing.Size(60, 20);
             this.mnuQuanly.Text = "Quản lý";
@@ -128,6 +130,13 @@
             this.mnuQLHangHoa.Text = "Quán lý Hàng hóa";
             this.mnuQLHangHoa.Click += new System.EventHandler(this.mnuQLHangHoa_Click);
             // 
+            // mnuQuanLyNhanVien
+            // 
+            this.mnuQuanLyNhanVien.Name = "mnuQuanLyNhanVien";
+            this.mnuQuanLyNhanVien.Size = new System.Drawing.Size(203, 22);
+            this.mnuQuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.mnuQuanLyNhanVien.Click += new System.EventHandler(this.mnuQuanLyNhanVien_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhaCungCap;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyKhachHang;
         private System.Windows.Forms.ToolStripMenuItem mnuQLHangHoa;
+        private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhanVien;
     }
 }

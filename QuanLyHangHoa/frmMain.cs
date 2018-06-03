@@ -60,5 +60,11 @@ namespace QuanLyHangHoa
             frmQuanLyHangHoa quanlyhanghoa = new frmQuanLyHangHoa();
             quanlyhanghoa.ShowDialog();
         }
+
+        private void mnuQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            frmNhanVien quanlynhanvien = new frmNhanVien();
+            quanlynhanvien.ShowDialog();
+        }
     }
 }
