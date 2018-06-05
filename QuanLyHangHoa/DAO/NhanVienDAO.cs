@@ -93,7 +93,11 @@ namespace QuanLyHangHoa.DAO
             return dataAccessHelper.GetData(sql);
         }
 
-
+        public DataTable LayTatCaNhanVienTheoMa(string manhanvien)
+        {
+            string sql = "select * from nhanvien  where manhanvien = '"+manhanvien+"'";
+            return dataAccessHelper.GetData(sql);
+        }
        
 
 

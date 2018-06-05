@@ -16,7 +16,9 @@ namespace QuanLyHangHoa.Entities
         private string tinhtrang;
         private NhomHangHoa manhomhanghoa;
         private NhaCungCap manhacungcap;
+        private string donvitinh;
 
+      
         public HangHoa()
         {
  
@@ -70,6 +72,12 @@ namespace QuanLyHangHoa.Entities
         {
             get { return manhacungcap; }
             set { manhacungcap = value; }
+        }
+
+        public string Donvitinh
+        {
+            get { return donvitinh; }
+            set { donvitinh = value; }
         }
     }
 }

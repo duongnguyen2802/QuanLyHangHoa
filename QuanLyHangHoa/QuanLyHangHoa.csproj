@@ -53,6 +53,7 @@
     <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\NhomHangHoaDAO.cs" />
+    <Compile Include="DAO\PhieuNhapDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DataAcessLayer\DataAccessHelper.cs" />
     <Compile Include="Entities\ChucNang.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Entities\NhaCungCap.cs" />
     <Compile Include="Entities\NhanVien.cs" />
     <Compile Include="Entities\NhomHangHoa.cs" />
+    <Compile Include="Entities\PhieuNhap.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -111,6 +113,12 @@
     <Compile Include="frmnhapdang.Designer.cs">
       <DependentUpon>frmnhapdang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhomHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmnhapdang.resx">
       <DependentUpon>frmnhapdang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhomHangHoa.resx">
       <DependentUpon>frmNhomHangHoa.cs</DependentUpon>

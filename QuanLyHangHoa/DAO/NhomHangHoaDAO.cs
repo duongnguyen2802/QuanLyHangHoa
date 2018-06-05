@@ -17,6 +17,7 @@ namespace QuanLyHangHoa.DAO
             return dataAccessHelper.GetData("select * from nhomhanghoa");
         }
 
+       
         public bool ThemNhomHangHoa(NhomHangHoa nhomhanghoa)
         {
             string sql = "insert into nhomhanghoa(tennhomhanghoa) values(@tennhomhanghoa)";

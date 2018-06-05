@@ -15,7 +15,7 @@ namespace QuanLyHangHoa.DAO
         public DataTable LayDanhSachMatHang()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(" select mamathang, tenmathang, soluong, dongia, ngaysanxuat, ngayhethan, tinhtrang, nhomhanghoa.tennhomhanghoa ,nhacungcap.tennhacungcap,nhacungcap.manhacungcap,nhomhanghoa.manhomhanghoa  ");
+            sb.Append(" select mamathang, tenmathang, soluong, dongia, ngaysanxuat, ngayhethan, tinhtrang,donvitinh, nhomhanghoa.tennhomhanghoa ,nhacungcap.tennhacungcap,nhacungcap.manhacungcap,nhomhanghoa.manhomhanghoa  ");
             sb.Append(" from hanghoa ");
             sb.Append(" join nhacungcap on hanghoa.manhacungcap = nhacungcap.manhacungcap ");
             sb.Append(" join nhomhanghoa on hanghoa.manhomhanghoa = nhomhanghoa.manhomhanghoa ");
@@ -32,8 +32,8 @@ namespace QuanLyHangHoa.DAO
         public bool ThemMatHang(HangHoa hanghoa)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("insert into hanghoa (mamathang, tenmathang, soluong, dongia, ngaysanxuat, ngayhethan, manhomhanghoa, manhacungcap)");
-            sb.Append("values(@mamathang, @tenmathang, @soluong, @dongia, @ngaysanxuat, @ngayhethan, @manhomhanghoa, @manhacungcap)");
+            sb.Append("insert into hanghoa (mamathang, tenmathang, soluong, dongia, ngaysanxuat, ngayhethan, manhomhanghoa, manhacungcap,donvitinh)");
+            sb.Append("values(@mamathang, @tenmathang, @soluong, @dongia, @ngaysanxuat, @ngayhethan, @manhomhanghoa, @manhacungcap,@donvitinh)");
             List<string> parameters = new List<string>();
             List<object> values = new List<object>();
 
@@ -61,6 +61,10 @@ namespace QuanLyHangHoa.DAO
 
             parameters.Add("manhacungcap");
             values.Add(hanghoa.Manhacungcap.Manhacungcap);
+            parameters.Add("donvitinh");
+            values.Add(hanghoa.Donvitinh);
+
+            
 
            return dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sb.ToString(), parameters, values);
           
@@ -71,7 +75,7 @@ namespace QuanLyHangHoa.DAO
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(" update hanghoa  ");
-            sb.Append(" set tenmathang =@tenmathang  ,soluong = @soluong , dongia= @dongia , ngaysanxuat = @ngaysanxuat, ngayhethan = @ngayhethan , manhomhanghoa = @manhomhanghoa, manhacungcap = @manhacungcap ");
+            sb.Append(" set tenmathang =@tenmathang  ,soluong = @soluong , dongia= @dongia , ngaysanxuat = @ngaysanxuat, ngayhethan = @ngayhethan , manhomhanghoa = @manhomhanghoa, manhacungcap = @manhacungcap,donvitinh=@donvitinh ");
             sb.Append(" where  mamathang = @mamathang ");
             List<string> parameters = new List<string>();
             List<object> values = new List<object>();
@@ -100,6 +104,8 @@ namespace QuanLyHangHoa.DAO
 
             parameters.Add("manhacungcap");
             values.Add(hanghoa.Manhacungcap.Manhacungcap);
+            parameters.Add("donvitinh");
+            values.Add(hanghoa.Donvitinh);
 
             return dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sb.ToString(), parameters, values);
 

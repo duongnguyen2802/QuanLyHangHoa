@@ -25,3 +25,4 @@ E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmQuanL
 E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmNhanVien.resources
 E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmDangKy.resources
 E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.csprojResolveAssemblyReference.cache
+E:\vs\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmNhapHang.resources

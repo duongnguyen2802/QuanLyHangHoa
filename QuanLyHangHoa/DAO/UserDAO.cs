@@ -138,10 +138,11 @@ namespace QuanLyHangHoa.DAO
             if (dtUserChucNang.Rows.Count > 0)
             {
                 StringBuilder sbSql = new StringBuilder();
-                sbSql.Append(" select us.*, cn.* from user us ");
+                sbSql.Append(" select us.*, cn.*,nv.* from user us ");
                 sbSql.Append(" join nhomuser nus on us.manhomuser = nus.manhom  ");
                 sbSql.Append(" join nhomuserchucnang nuschucnag on nus.manhom = nuschucnag.manhomuser ");
                 sbSql.Append(" join chucnang cn on nuschucnag.machucnang = cn.machucnang ");
+                sbSql.Append(" join nhanvien nv on nv.manhanvien = us.manhanvien ");
                 sbSql.Append(" where us.tendangnhap = @tendangnhap ");
 
                 //xóa tham số và giá trị matkhau  để dùng lại list
@@ -150,6 +151,7 @@ namespace QuanLyHangHoa.DAO
 
                 DataTable dtChucNang = dataAccessHelper.GetDataWithParam(sbSql.ToString(), parameters, values);
                 List<ChucNang> lsChucNang = new List<ChucNang>();
+                NhanVien nhanvien = new NhanVien();
                 foreach (DataRow item in dtChucNang.Rows)
                 {
                     ChucNang chucnang = new ChucNang();
@@ -157,11 +159,14 @@ namespace QuanLyHangHoa.DAO
                     chucnang.loaichucnang = item["loaichucnang"].ToString();
                     chucnang.tenchucnang = item["tenchucnang"].ToString();
                     chucnang.mota = item["mota"].ToString();
-
                     lsChucNang.Add(chucnang);
 
-
+                    nhanvien.Manhanvien = item["manhanvien"].ToString();
+                    nhanvien.Tennhanvien = item["tenhannhan"].ToString();
+                   
+                    
                 }
+                objReturnUser.Manhanvien = nhanvien;
                 objReturnUser.DsChucNang = lsChucNang;
 
             }

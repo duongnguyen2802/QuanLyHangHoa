@@ -31,6 +31,7 @@ namespace QuanLyHangHoa
         }
         private void frmQuanLyHangHoa_Load(object sender, EventArgs e)
         {
+            cboDonViTinh.SelectedIndex = 0;
             //load danh sách nhà cung cấp vào combobox
             cboNhaCungCap.DisplayMember = "tennhacungcap";
             cboNhaCungCap.ValueMember = "manhacungcap";
@@ -51,7 +52,7 @@ namespace QuanLyHangHoa
 
             dgvHangHoa.DataSource = hangHoaDAO.LayDanhSachMatHang();
 
-
+            
             this.getMaxMaHangHoa();
 
         }
@@ -101,6 +102,7 @@ namespace QuanLyHangHoa
             hanghoa.Tenmathang = txtTenMatHang.Text;
             hanghoa.Dongia = Convert.ToSingle(txtDonGia.Text);
             hanghoa.Soluong = Convert.ToInt32(txtSoLuong.Text);
+            hanghoa.Donvitinh = cboDonViTinh.SelectedText;
            
             nhacungcap.Manhacungcap = Convert.ToInt32(cboNhaCungCap.SelectedValue.ToString());
             hanghoa.Manhacungcap = nhacungcap;
@@ -154,6 +156,7 @@ namespace QuanLyHangHoa
             txtTenMatHang.Text = dgvHangHoa.CurrentRow.Cells["tenmathang"].Value.ToString();
             txtSoLuong.Text = dgvHangHoa.CurrentRow.Cells["soluong"].Value.ToString();
             txtDonGia.Text = dgvHangHoa.CurrentRow.Cells["dongia"].Value.ToString();
+            cboDonViTinh.Text = dgvHangHoa.CurrentRow.Cells["donvitinh"].Value.ToString();
 
             if (dgvHangHoa.CurrentRow.Cells["ngaysanxuat"].Value != null)
             {
@@ -243,6 +246,7 @@ namespace QuanLyHangHoa
             hanghoa.Tenmathang = txtTenMatHang.Text;
             hanghoa.Dongia = Convert.ToSingle(txtDonGia.Text);
             hanghoa.Soluong = Convert.ToInt32(txtSoLuong.Text);
+            hanghoa.Donvitinh = cboDonViTinh.SelectedText;
 
             nhacungcap.Manhacungcap = Convert.ToInt32(cboNhaCungCap.SelectedValue.ToString());
             hanghoa.Manhacungcap = nhacungcap;

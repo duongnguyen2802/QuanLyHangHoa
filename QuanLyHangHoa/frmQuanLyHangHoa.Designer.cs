@@ -50,6 +50,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cboDonViTinh = new System.Windows.Forms.ComboBox();
             this.mamathang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenmathang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +63,7 @@
             this.tennhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manhomhanghoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +110,7 @@
             // 
             this.txtTenMatHang.Location = new System.Drawing.Point(332, 64);
             this.txtTenMatHang.Name = "txtTenMatHang";
-            this.txtTenMatHang.Size = new System.Drawing.Size(442, 20);
+            this.txtTenMatHang.Size = new System.Drawing.Size(179, 20);
             this.txtTenMatHang.TabIndex = 10;
             // 
             // label4
@@ -151,7 +154,7 @@
             this.datePickerNgaySX.CustomFormat = "dd/MM/YYYY";
             this.datePickerNgaySX.Location = new System.Drawing.Point(332, 135);
             this.datePickerNgaySX.Name = "datePickerNgaySX";
-            this.datePickerNgaySX.Size = new System.Drawing.Size(151, 20);
+            this.datePickerNgaySX.Size = new System.Drawing.Size(179, 20);
             this.datePickerNgaySX.TabIndex = 11;
             // 
             // label6
@@ -193,7 +196,7 @@
             this.cboNhaCungCap.FormattingEnabled = true;
             this.cboNhaCungCap.Location = new System.Drawing.Point(332, 95);
             this.cboNhaCungCap.Name = "cboNhaCungCap";
-            this.cboNhaCungCap.Size = new System.Drawing.Size(151, 21);
+            this.cboNhaCungCap.Size = new System.Drawing.Size(179, 21);
             this.cboNhaCungCap.TabIndex = 13;
             // 
             // label10
@@ -272,13 +275,37 @@
             this.tennhomhanghoa,
             this.tennhacungcap,
             this.manhomhanghoa,
-            this.manhacungcap});
+            this.manhacungcap,
+            this.donvitinh});
             this.dgvHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvHangHoa.Location = new System.Drawing.Point(0, 229);
             this.dgvHangHoa.Name = "dgvHangHoa";
             this.dgvHangHoa.Size = new System.Drawing.Size(800, 175);
             this.dgvHangHoa.TabIndex = 16;
             this.dgvHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHangHoa_CellClick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(521, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Đơn vị tính";
+            // 
+            // cboDonViTinh
+            // 
+            this.cboDonViTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDonViTinh.FormattingEnabled = true;
+            this.cboDonViTinh.Items.AddRange(new object[] {
+            "Cái",
+            "Thùng",
+            "Hộp",
+            "Gói"});
+            this.cboDonViTinh.Location = new System.Drawing.Point(633, 63);
+            this.cboDonViTinh.Name = "cboDonViTinh";
+            this.cboDonViTinh.Size = new System.Drawing.Size(141, 21);
+            this.cboDonViTinh.TabIndex = 13;
             // 
             // mamathang
             // 
@@ -321,6 +348,7 @@
             this.tinhtrang.DataPropertyName = "tinhtrang";
             this.tinhtrang.HeaderText = "Tình trạng";
             this.tinhtrang.Name = "tinhtrang";
+            this.tinhtrang.Visible = false;
             // 
             // tennhomhanghoa
             // 
@@ -348,6 +376,12 @@
             this.manhacungcap.Name = "manhacungcap";
             this.manhacungcap.Visible = false;
             // 
+            // donvitinh
+            // 
+            this.donvitinh.DataPropertyName = "donvitinh";
+            this.donvitinh.HeaderText = "Đơn vị tính";
+            this.donvitinh.Name = "donvitinh";
+            // 
             // frmQuanLyHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +393,8 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.cboDonViTinh);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.cboNhomHangHoa);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cboNhaCungCap);
@@ -410,6 +446,8 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridView dgvHangHoa;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboDonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn mamathang;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenmathang;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
@@ -421,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tennhacungcap;
         private System.Windows.Forms.DataGridViewTextBoxColumn manhomhanghoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn manhacungcap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donvitinh;
     }
 }

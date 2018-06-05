@@ -112,5 +112,11 @@ namespace QuanLyHangHoa
 
             }
         }
+
+        private void mnuNhapHang_Click(object sender, EventArgs e)
+        {
+            frmNhapHang nhaphang = new frmNhapHang();
+            nhaphang.ShowDialog();
+        }
     }
 }
