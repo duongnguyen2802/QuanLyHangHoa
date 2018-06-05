@@ -50,6 +50,7 @@
             this.tenloainhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dienthoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diahchi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loainhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -202,6 +203,7 @@
             this.tenloainhanvien,
             this.dienthoai,
             this.email,
+            this.diahchi,
             this.loainhanvien});
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvNhanVien.Location = new System.Drawing.Point(0, 241);
@@ -239,6 +241,12 @@
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "Email";
             this.email.Name = "email";
+            // 
+            // diahchi
+            // 
+            this.diahchi.DataPropertyName = "diahchi";
+            this.diahchi.HeaderText = "Địa chỉ";
+            this.diahchi.Name = "diahchi";
             // 
             // loainhanvien
             // 
@@ -303,6 +311,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenloainhanvien;
         private System.Windows.Forms.DataGridViewTextBoxColumn dienthoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diahchi;
         private System.Windows.Forms.DataGridViewTextBoxColumn loainhanvien;
     }
 }

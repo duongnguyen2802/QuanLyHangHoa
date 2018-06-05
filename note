@@ -1,0 +1,49 @@
+select * from nhanvien where manhanvien = 'KD000001';
+
+insert into 
+quanlyhanghoa.user(tendangnhap, matkhau, manhomuser, manhanvien, email, dienthoai)
+ values
+(
+	 tendangnhap= 'hoatk',
+	 matkhau ='123', 
+	 manhomuser =1,
+	 manhanvien='KD000001', 
+	 email ='sdfs@', 
+	 dienthoai='0133'
+ );
+ 
+ select * from nhanvien where  manhanvien='GD000001';
+ select * from user;
+ 
+ 
+ ALTER TABLE user CONVERT TO CHARACTER SET utf8;
+ ALTER DATABASE quanlyhanghoa CHARACTER SET utf8 COLLATE utf8_general_ci;
+ 
+ 
+ ---------------
+ select * from nhanvien where manhanvien = 'KD000001';
+
+insert into 
+quanlyhanghoa.user(tendangnhap, matkhau, manhomuser, manhanvien, email, dienthoai)
+ values
+(
+	 tendangnhap= 'hoatk',
+	 matkhau ='123', 
+	 manhomuser =1,
+	 manhanvien='KD000001', 
+	 email ='sdfs@', 
+	 dienthoai='0133'
+ );
+ 
+ select * from nhanvien where  manhanvien='GD000001';
+ select * from user;
+ 
+ 
+ ALTER TABLE nhanvien CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ ALTER DATABASE quanlyhanghoa CHARACTER SET utf8 COLLATE utf8_general_ci;
+ 
+ ALTER TABLE user
+ADD FOREIGN KEY (manhanvien) REFERENCES nhanvien(manhanvien);
+ 
+ 
+ 

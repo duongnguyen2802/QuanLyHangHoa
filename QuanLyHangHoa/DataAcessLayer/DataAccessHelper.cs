@@ -18,7 +18,7 @@ namespace QuanLyHangHoa.DataAcessLayer
         public DataAccessHelper()
         {
             server = "localhost";
-            database = "quanlyhanghoa";
+            database = "quanlyhanghoa2";
             uid = "root";
             password = "123456";
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
@@ -90,6 +90,26 @@ namespace QuanLyHangHoa.DataAcessLayer
             return dt;
         }
 
+        public DataTable GetDataWithParam(string sqlSelect, List<string> parameters, List<object> values)
+        {
+            DataTable dt = new DataTable();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(sqlSelect, connection);
+                for (int i = 0; i < parameters.Count; i++)
+                {
+                    MySqlParameter p = new MySqlParameter(parameters[i], values[i]);
+                    cmd.Parameters.Add(p);
+                }
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(cmd);
+                mySqlDataAdapter.Fill(dt);
+                //close connection
+                this.CloseConnection();
+            }
+            return dt;
+        }
+
+
         public bool ThuThiCauLenhInsertOrUpdateOrDelete(string sql, List<string> parameters, List<object> values)
         {
             bool kiemtra = false;
@@ -99,11 +119,11 @@ namespace QuanLyHangHoa.DataAcessLayer
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 for (int i = 0; i < parameters.Count; i++)
                 {
-                    MySqlParameter p = new MySqlParameter(parameters[i],values[i]);
+                    MySqlParameter p = new MySqlParameter(parameters[i], values[i]);
                     cmd.Parameters.Add(p);
                 }
                 //Execute command
-               kiemtra =  cmd.ExecuteNonQuery() > 0;
+                kiemtra = cmd.ExecuteNonQuery() > 0;
 
                 //close connection
                 this.CloseConnection();
@@ -111,6 +131,13 @@ namespace QuanLyHangHoa.DataAcessLayer
 
             return kiemtra;
         }
+
+
+
+
+
+
+
 
 
         public void Insert()
@@ -121,7 +148,7 @@ namespace QuanLyHangHoa.DataAcessLayer
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);          
+                MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlParameter p = new MySqlParameter();
                 //Execute command
                 cmd.ExecuteNonQuery();
@@ -141,7 +168,7 @@ namespace QuanLyHangHoa.DataAcessLayer
                 ma = tiento + ma + "1";
                 return ma;
             }
-            int max =0;
+            int max = 0;
             foreach (DataRow item in dt.Rows)
             {
                 StringBuilder sb = new StringBuilder();
