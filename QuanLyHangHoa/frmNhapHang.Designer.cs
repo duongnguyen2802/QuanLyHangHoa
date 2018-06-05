@@ -59,6 +59,8 @@
             this.txtPhieuNhap = new System.Windows.Forms.TextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.btnXuatHang = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.grboxMatHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangNhap)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,6 +68,8 @@
             // 
             // grboxMatHang
             // 
+            this.grboxMatHang.Controls.Add(this.btnXoa);
+            this.grboxMatHang.Controls.Add(this.btnSua);
             this.grboxMatHang.Controls.Add(this.btnXuatHang);
             this.grboxMatHang.Controls.Add(this.btnLamMoi);
             this.grboxMatHang.Controls.Add(this.btnThem);
@@ -93,7 +97,7 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(185, 131);
+            this.btnLamMoi.Location = new System.Drawing.Point(395, 131);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
             this.btnLamMoi.TabIndex = 6;
@@ -113,6 +117,7 @@
             // 
             // dgvHangNhap
             // 
+            this.dgvHangNhap.AllowUserToAddRows = false;
             this.dgvHangNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHangNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHangNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -126,6 +131,7 @@
             this.dgvHangNhap.Name = "dgvHangNhap";
             this.dgvHangNhap.Size = new System.Drawing.Size(712, 158);
             this.dgvHangNhap.TabIndex = 4;
+            this.dgvHangNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHangNhap_CellClick);
             // 
             // mamathang
             // 
@@ -344,13 +350,33 @@
             // 
             // btnXuatHang
             // 
-            this.btnXuatHang.Location = new System.Drawing.Point(287, 131);
+            this.btnXuatHang.Location = new System.Drawing.Point(497, 131);
             this.btnXuatHang.Name = "btnXuatHang";
             this.btnXuatHang.Size = new System.Drawing.Size(75, 23);
             this.btnXuatHang.TabIndex = 7;
             this.btnXuatHang.Text = "Nhập hàng";
             this.btnXuatHang.UseVisualStyleBackColor = true;
             this.btnXuatHang.Click += new System.EventHandler(this.btnXuatHang_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(185, 131);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(282, 131);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 9;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // frmNhapHang
             // 
@@ -405,5 +431,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhtien;
         private System.Windows.Forms.Button btnXuatHang;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

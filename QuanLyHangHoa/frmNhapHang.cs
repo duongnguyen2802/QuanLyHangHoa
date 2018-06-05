@@ -223,6 +223,11 @@ namespace QuanLyHangHoa
 
         private void btnXuatHang_Click(object sender, EventArgs e)
         {
+            if (dtHangNhap == null || dtHangNhap.Rows.Count == 0)
+            {
+                MessageBox.Show("Vui tạo danh sách mặt hàng","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
             PhieuNhap phieunhap = new PhieuNhap();
             phieunhap.maphieunhap = txtPhieuNhap.Text;
             phieunhap.ngaynhap = dtNgayNhap.Value;
@@ -239,6 +244,45 @@ namespace QuanLyHangHoa
                }
            }
 
+        }
+
+        private int currentrowindex = -1;
+        private void dgvHangNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            currentrowindex = e.RowIndex;
+            txtMaHang.Text = dgvHangNhap.CurrentRow.Cells["mamathang"].Value.ToString();
+            txtTenHang.Text = dgvHangNhap.CurrentRow.Cells["tenmathang"].Value.ToString();
+            txtSoLuong.Text = dgvHangNhap.CurrentRow.Cells["soluong"].Value.ToString();
+            txtGia.Text = dgvHangNhap.CurrentRow.Cells["dongia"].Value.ToString();
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if(currentrowindex != -1)
+            {
+               // dtHangNhap.Rows[currentrowindex]["mamathang"] = txtMaHang.Text;
+                dtHangNhap.Rows[currentrowindex]["tenmathang"] = txtTenHang.Text;
+                dtHangNhap.Rows[currentrowindex]["soluong"] = txtSoLuong.Text;
+                dtHangNhap.Rows[currentrowindex]["dongia"] = txtGia.Text;
+                dtHangNhap.Rows[currentrowindex]["thanhtien"] = int.Parse(txtSoLuong.Text) * float.Parse(txtGia.Text);
+                this.LamMoi();
+            }
+          
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (currentrowindex != -1)
+            {
+                DialogResult confirm = MessageBox.Show("Bạn có muốn xóa mã hàng  "+ txtMaHang.Text,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (confirm == DialogResult.Yes)
+                {
+                    dtHangNhap.Rows.RemoveAt(currentrowindex);
+                    this.LamMoi();
+                }
+            }
         }
 
 
