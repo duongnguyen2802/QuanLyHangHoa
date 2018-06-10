@@ -9,7 +9,8 @@ namespace QuanLyHangHoa.Entities
     {
        public string maphieunhap;
        public DateTime ngaynhap;
-       public string  manhanvien; 
+       public string  manhanvien;
+       public NhanVien nhanvien;
        public string ghichu;
     }
 }

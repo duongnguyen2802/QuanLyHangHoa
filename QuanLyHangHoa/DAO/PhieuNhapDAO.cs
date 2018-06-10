@@ -23,5 +23,25 @@ namespace QuanLyHangHoa.DAO
         {
             return dataAccessHelper.ThemPhieuNhap(phieunhap, dtDSMatHang);
         }
+
+        public DataTable LayPhieuNhapChoBaoCao(string maphieunhap)
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append(" select pn.*,nv.tenhannhan,ctpn.machitietphieu,ctpn.mamathang,ctpn.soluong,ctpn.dongia,hh.tenmathang, ncc.tennhacungcap, ncc.diachi,ncc.dienthoai from phieunhap pn    ");
+            sbSQL.Append(" join nhanvien nv on pn.manhanvien = nv.manhanvien ");
+            sbSQL.Append(" join chitietphieunhap ctpn on ctpn.maphieunhap = pn.maphieunhap ");
+            sbSQL.Append(" join hanghoa hh on hh.mamathang = ctpn.mamathang ");
+            sbSQL.Append(" join nhacungcap ncc on ncc.manhacungcap = hh.manhacungcap ");
+            sbSQL.Append(" where pn.maphieunhap = '" + maphieunhap + "'");
+            return dataAccessHelper.GetData(sbSQL.ToString());
+        }
+
+        public DataTable LayDanhSachPhieuNhap()
+        {
+            StringBuilder sbSQL = new StringBuilder();
+            sbSQL.Append(" select pn.*,nv.tenhannhan from phieunhap pn  ");
+            sbSQL.Append(" join nhanvien nv on pn.manhanvien = nv.manhanvien ");
+            return dataAccessHelper.GetData(sbSQL.ToString());
+        }
     }
 }
