@@ -50,3 +50,4 @@ E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanL
 E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmBCPhieuNhapKho.resources
 E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.Form2.resources
 E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.csprojResolveAssemblyReference.cache
+E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmXuatHang.resources

@@ -37,9 +37,12 @@
             this.btnInPhieu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cboNguoiLap = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.datePickerNgayLap = new System.Windows.Forms.DateTimePicker();
+            this.maphieunhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenhannhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaynhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +73,15 @@
             // 
             // dgvPhieuNhap
             // 
+            this.dgvPhieuNhap.AllowUserToAddRows = false;
+            this.dgvPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhieuNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maphieunhap,
+            this.manhanvien,
+            this.tenhannhan,
+            this.ngaynhap,
+            this.ghichu});
             this.dgvPhieuNhap.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPhieuNhap.Location = new System.Drawing.Point(0, 218);
             this.dgvPhieuNhap.Name = "dgvPhieuNhap";
@@ -86,6 +97,7 @@
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa
             // 
@@ -123,28 +135,42 @@
             this.cboNguoiLap.Size = new System.Drawing.Size(180, 21);
             this.cboNguoiLap.TabIndex = 7;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(303, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Ghi chú";
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Location = new System.Drawing.Point(384, 96);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(180, 20);
-            this.txtGhiChu.TabIndex = 1;
-            // 
             // datePickerNgayLap
             // 
             this.datePickerNgayLap.Location = new System.Drawing.Point(384, 62);
             this.datePickerNgayLap.Name = "datePickerNgayLap";
             this.datePickerNgayLap.Size = new System.Drawing.Size(180, 20);
             this.datePickerNgayLap.TabIndex = 8;
+            // 
+            // maphieunhap
+            // 
+            this.maphieunhap.DataPropertyName = "maphieunhap";
+            this.maphieunhap.HeaderText = "Mã phiếu nhập";
+            this.maphieunhap.Name = "maphieunhap";
+            // 
+            // manhanvien
+            // 
+            this.manhanvien.DataPropertyName = "manhanvien";
+            this.manhanvien.HeaderText = "Mã nhân viên";
+            this.manhanvien.Name = "manhanvien";
+            // 
+            // tenhannhan
+            // 
+            this.tenhannhan.DataPropertyName = "tenhannhan";
+            this.tenhannhan.HeaderText = "Tên nhân viên";
+            this.tenhannhan.Name = "tenhannhan";
+            // 
+            // ngaynhap
+            // 
+            this.ngaynhap.DataPropertyName = "ngaynhap";
+            this.ngaynhap.HeaderText = "Ngày tạo";
+            this.ngaynhap.Name = "ngaynhap";
+            // 
+            // ghichu
+            // 
+            this.ghichu.DataPropertyName = "ghichu";
+            this.ghichu.HeaderText = "Ghi chú";
+            this.ghichu.Name = "ghichu";
             // 
             // frmQuanLyPhieuNhap
             // 
@@ -158,8 +184,6 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.dgvPhieuNhap);
-            this.Controls.Add(this.txtGhiChu);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMaPhieu);
             this.Controls.Add(this.label1);
@@ -183,8 +207,11 @@
         private System.Windows.Forms.Button btnInPhieu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboNguoiLap;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.DateTimePicker datePickerNgayLap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maphieunhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manhanvien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenhannhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaynhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ghichu;
     }
 }

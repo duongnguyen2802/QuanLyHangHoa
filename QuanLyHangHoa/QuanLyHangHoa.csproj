@@ -57,6 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\PhieuXuat.cs" />
+    <Compile Include="frmXuatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXuatHang.Designer.cs">
+      <DependentUpon>frmXuatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +202,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="VNCurrency.cs" />
+    <EmbeddedResource Include="frmXuatHang.resx">
+      <DependentUpon>frmXuatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>

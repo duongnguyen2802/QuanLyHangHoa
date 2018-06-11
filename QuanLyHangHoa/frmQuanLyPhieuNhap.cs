@@ -17,14 +17,45 @@ namespace QuanLyHangHoa
             InitializeComponent();
         }
         PhieuNhapDAO phieuNhapDAO = new PhieuNhapDAO();
+        NhanVienDAO nhanvienDAO = new NhanVienDAO();
+        DataTable dtPhieuNhap = null;
         private void frmQuanLyPhieuNhap_Load(object sender, EventArgs e)
         {
-            dgvPhieuNhap.DataSource = phieuNhapDAO.LayDanhSachPhieuNhap();
+            //formate datetime picker
+            datePickerNgayLap.Format = DateTimePickerFormat.Custom;
+            datePickerNgayLap.CustomFormat = "dd-MM-yyyy";
+            dtPhieuNhap = phieuNhapDAO.LayDanhSachPhieuNhap();
+            dgvPhieuNhap.DataSource = dtPhieuNhap;
+            cboNguoiLap.DisplayMember = "tenhannhan";
+            cboNguoiLap.ValueMember = "manhanvien";
+            cboNguoiLap.DataSource = nhanvienDAO.LayTatCaNhanVien();
+
+
+            AutoCompleteStringCollection sourcePhieuNhap = new AutoCompleteStringCollection();
+            foreach (DataRow datarow in dtPhieuNhap.Rows)
+            {
+                sourcePhieuNhap.Add(datarow["maphieunhap"].ToString());
+            }
+            txtMaPhieu.AutoCompleteCustomSource = sourcePhieuNhap;
+            txtMaPhieu.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtMaPhieu.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
         }
 
         private void dgvPhieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaPhieu.Text = dgvPhieuNhap.CurrentRow.Cells["maphieunhap"].Value.ToString();
+            datePickerNgayLap.Value = Convert.ToDateTime(dgvPhieuNhap.CurrentRow.Cells["ngaynhap"].Value);
+            DataTable dtnhanvien = phieuNhapDAO.LayDanhSachPhieuNhap();
+            for (int i = 0; i < dtnhanvien.Rows.Count; i++)
+            {
+                if (dtnhanvien.Rows[i]["manhanvien"].ToString().Equals(dgvPhieuNhap.CurrentRow.Cells["manhanvien"].Value.ToString()))
+                {
+                    cboNguoiLap.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnInPhieu_Click(object sender, EventArgs e)
@@ -39,6 +70,11 @@ namespace QuanLyHangHoa
                 phieunhapkho.maphieunhap = txtMaPhieu.Text;
                 phieunhapkho.ShowDialog();
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
         }
 
        
