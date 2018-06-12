@@ -217,7 +217,11 @@ namespace QuanLyHangHoa.DataAcessLayer
                     }
                     //Execute command
                     kiemtra = cmdPhieuNhap.ExecuteNonQuery() > 0;
-
+                    if (kiemtra == false)
+                    {
+                        mySqlTransaction.Rollback();
+                        return false;
+                    }
 
 
                     foreach (DataRow dr in dtDSMatHang.Rows)
@@ -237,6 +241,21 @@ namespace QuanLyHangHoa.DataAcessLayer
                         }
                         //Execute command
                         kiemtra = cmdChiTiet.ExecuteNonQuery() > 0;
+                        if (kiemtra == false)
+                        {
+                            mySqlTransaction.Rollback();
+                            return false;
+                        }
+                        //update sô lượng tồn kho trong bảng hàng hoa
+                        //create command and assign the query and connection from the constructor
+                        string sqlTonKho = "update hanghoa set soluong = soluong + " + dr["soluong"].ToString() + " where mamathang = '" + dr["mamathang"].ToString() + "'";
+                        MySqlCommand cmdUpdateTonKho = new MySqlCommand(sqlTonKho, connection);
+                        kiemtra = cmdUpdateTonKho.ExecuteNonQuery() > 0;
+                        if (kiemtra == false)
+                        {
+                            mySqlTransaction.Rollback();
+                            return false;
+                        }
 
                     }
 
@@ -257,7 +276,113 @@ namespace QuanLyHangHoa.DataAcessLayer
             return kiemtra;
         }
 
+        public bool ThemPhieuXuat(PhieuXuat phieuxuat, DataTable dtDSMatHang)
+        {
+            bool kiemtra = false;
+            StringBuilder sqlChitiet = new StringBuilder();
+            sqlChitiet.Append(" insert into chitietphieuxuat(maphieuxuat, mamathang, soluong, dongia) ");
+            sqlChitiet.Append("  values(@maphieuxuat, @mamathang, @soluong, @dongia) ");
+            List<string> parametersChiTiet = new List<string>();
+            parametersChiTiet.Add("maphieuxuat");
+            parametersChiTiet.Add("soluong");
+            parametersChiTiet.Add("dongia");
+            parametersChiTiet.Add("mamathang");
 
+
+            StringBuilder sqlPhieuNhap = new StringBuilder();
+            sqlPhieuNhap.Append(" insert into phieuxuat(maphieuxuat, ngayxuat, manhanvien, MaKH, ghichu) ");
+            sqlPhieuNhap.Append(" values(@maphieuxuat, @ngayxuat, @manhanvien, @MaKH, @ghichu) ");
+            List<string> parametersPhieuXuat = new List<string>();
+            List<object> valuesPhieuXuat = new List<object>();
+
+            parametersPhieuXuat.Add("maphieuxuat");
+            valuesPhieuXuat.Add(phieuxuat.maphieuxuat);
+
+            parametersPhieuXuat.Add("ngayxuat");
+            valuesPhieuXuat.Add(phieuxuat.ngayxuat);
+
+            parametersPhieuXuat.Add("manhanvien");
+            valuesPhieuXuat.Add(phieuxuat.manhanvien);
+            parametersPhieuXuat.Add("MaKH");
+            valuesPhieuXuat.Add(phieuxuat.MaKH);
+
+            parametersPhieuXuat.Add("ghichu");
+            valuesPhieuXuat.Add(phieuxuat.ghichu);
+
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlTransaction mySqlTransaction = connection.BeginTransaction();
+                try
+                {
+
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmdPhieuNhap = new MySqlCommand(sqlPhieuNhap.ToString(), connection);
+                    for (int i = 0; i < parametersPhieuXuat.Count; i++)
+                    {
+                        MySqlParameter p = new MySqlParameter(parametersPhieuXuat[i], valuesPhieuXuat[i]);
+                        cmdPhieuNhap.Parameters.Add(p);
+                    }
+                    //Execute command
+                    kiemtra = cmdPhieuNhap.ExecuteNonQuery() > 0;
+                    if (kiemtra == false)
+                    {
+                        mySqlTransaction.Rollback();
+                        return false;
+                    }
+
+
+                    foreach (DataRow dr in dtDSMatHang.Rows)
+                    {
+                        List<object> valuesChiTiet = new List<object>();
+                        valuesChiTiet.Add(phieuxuat.maphieuxuat);
+                        valuesChiTiet.Add(dr["soluong"].ToString());
+                        valuesChiTiet.Add(dr["dongia"].ToString());
+                        valuesChiTiet.Add(dr["mamathang"].ToString());
+
+                        //create command and assign the query and connection from the constructor
+                        MySqlCommand cmdChiTiet = new MySqlCommand(sqlChitiet.ToString(), connection);
+                        for (int i = 0; i < parametersChiTiet.Count; i++)
+                        {
+                            MySqlParameter p = new MySqlParameter(parametersChiTiet[i], valuesChiTiet[i]);
+                            cmdChiTiet.Parameters.Add(p);
+                        }
+                        //Execute command
+                        kiemtra = cmdChiTiet.ExecuteNonQuery() > 0;
+                        if (kiemtra == false)
+                        {
+                            mySqlTransaction.Rollback();
+                            return false;
+                        }
+                        //update sô lượng tồn kho trong bảng hàng hoa
+                        //create command and assign the query and connection from the constructor
+                        string sqlTonKho = "update hanghoa set soluong = soluong - " + dr["soluong"].ToString() + " where mamathang = '" + dr["mamathang"].ToString() + "'";
+                        MySqlCommand cmdUpdateTonKho = new MySqlCommand(sqlTonKho, connection);
+                        kiemtra = cmdUpdateTonKho.ExecuteNonQuery() > 0;
+                        if (kiemtra == false)
+                        {
+                            mySqlTransaction.Rollback();
+                            return false;
+                        }
+
+                    }
+
+                    mySqlTransaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    string a = ex.ToString();
+                    mySqlTransaction.Rollback();
+                }
+                finally
+                {
+                    //close connection
+                    this.CloseConnection();
+                }
+            }
+
+            return kiemtra;
+        }
 
 
         public void Insert()

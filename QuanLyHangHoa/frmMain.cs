@@ -87,7 +87,7 @@ namespace QuanLyHangHoa
             dangnhap.ShowDialog();
             if (UserLogin != null)
             {
-                KiemTraQuyen();
+               // KiemTraQuyen();
             }
             else
             {
@@ -117,6 +117,12 @@ namespace QuanLyHangHoa
         {
             frmNhapHang nhaphang = new frmNhapHang();
             nhaphang.ShowDialog();
+        }
+
+        private void mnuXuatHang_Click(object sender, EventArgs e)
+        {
+            frmXuatHang xuatHang = new frmXuatHang();
+            xuatHang.ShowDialog();
         }
     }
 }

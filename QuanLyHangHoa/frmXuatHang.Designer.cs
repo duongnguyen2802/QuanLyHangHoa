@@ -57,9 +57,11 @@
             this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboKhachHang = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtPhieuXuat = new System.Windows.Forms.TextBox();
+            this.txtMaPhieuXuat = new System.Windows.Forms.TextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.grboxMatHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangNhap)).BeginInit();
@@ -87,7 +89,7 @@
             this.grboxMatHang.Controls.Add(this.cboLoaiHang);
             this.grboxMatHang.Controls.Add(this.label1);
             this.grboxMatHang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grboxMatHang.Location = new System.Drawing.Point(0, 167);
+            this.grboxMatHang.Location = new System.Drawing.Point(0, 220);
             this.grboxMatHang.Name = "grboxMatHang";
             this.grboxMatHang.Size = new System.Drawing.Size(718, 337);
             this.grboxMatHang.TabIndex = 0;
@@ -330,25 +332,44 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboKhachHang);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.dtNgayNhap);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtPhieuXuat);
+            this.groupBox2.Controls.Add(this.txtMaPhieuXuat);
             this.groupBox2.Controls.Add(this.txtNhanVien);
             this.groupBox2.Controls.Add(this.txtGhiChu);
             this.groupBox2.Location = new System.Drawing.Point(3, 56);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(712, 105);
+            this.groupBox2.Size = new System.Drawing.Size(712, 146);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin xuất hàng";
             // 
+            // cboKhachHang
+            // 
+            this.cboKhachHang.FormattingEnabled = true;
+            this.cboKhachHang.Location = new System.Drawing.Point(412, 73);
+            this.cboKhachHang.Name = "cboKhachHang";
+            this.cboKhachHang.Size = new System.Drawing.Size(200, 21);
+            this.cboKhachHang.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(332, 76);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Khách hàng";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(331, 77);
+            this.label10.Location = new System.Drawing.Point(3, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 7;
@@ -363,26 +384,26 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Mã phiếu";
             // 
-            // txtPhieuXuat
+            // txtMaPhieuXuat
             // 
-            this.txtPhieuXuat.Enabled = false;
-            this.txtPhieuXuat.Location = new System.Drawing.Point(83, 31);
-            this.txtPhieuXuat.Name = "txtPhieuXuat";
-            this.txtPhieuXuat.Size = new System.Drawing.Size(174, 20);
-            this.txtPhieuXuat.TabIndex = 3;
+            this.txtMaPhieuXuat.Enabled = false;
+            this.txtMaPhieuXuat.Location = new System.Drawing.Point(83, 31);
+            this.txtMaPhieuXuat.Name = "txtMaPhieuXuat";
+            this.txtMaPhieuXuat.Size = new System.Drawing.Size(174, 20);
+            this.txtMaPhieuXuat.TabIndex = 3;
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(411, 70);
+            this.txtGhiChu.Location = new System.Drawing.Point(83, 105);
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(200, 20);
+            this.txtGhiChu.Size = new System.Drawing.Size(529, 20);
             this.txtGhiChu.TabIndex = 3;
             // 
             // frmXuatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 504);
+            this.ClientSize = new System.Drawing.Size(718, 557);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grboxMatHang);
             this.Name = "frmXuatHang";
@@ -421,7 +442,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPhieuXuat;
+        private System.Windows.Forms.TextBox txtMaPhieuXuat;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnThem;
@@ -433,5 +454,7 @@
         private System.Windows.Forms.Button btnXuatHang;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.ComboBox cboKhachHang;
+        private System.Windows.Forms.Label label11;
     }
 }

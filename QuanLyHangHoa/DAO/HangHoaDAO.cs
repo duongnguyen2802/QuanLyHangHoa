@@ -29,6 +29,13 @@ namespace QuanLyHangHoa.DAO
 
         }
 
+        public DataTable LayHangHoaTheoMa(string mahanghoa)
+        {
+            string sql = "select * from hanghoa where mamathang = '"+mahanghoa+"'";
+            return dataAccessHelper.GetData(sql);
+
+        }
+
         public bool ThemMatHang(HangHoa hanghoa)
         {
             StringBuilder sb = new StringBuilder();

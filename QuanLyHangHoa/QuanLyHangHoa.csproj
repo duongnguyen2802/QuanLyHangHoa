@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\PhieuXuatDAO.cs" />
     <Compile Include="Entities\PhieuXuat.cs" />
     <Compile Include="frmXuatHang.cs">
       <SubType>Form</SubType>

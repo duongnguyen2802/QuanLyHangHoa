@@ -17,5 +17,11 @@ namespace QuanLyHangHoa.DAO
            return dataAccessHelper.getMaKH(sql, "KH", 8);
 
         }
+
+        public DataTable LayTatCaKhachHang()
+        {
+            String sql = "select * from khachhang";
+            return dataAccessHelper.GetData(sql);
+        }
     }
 }

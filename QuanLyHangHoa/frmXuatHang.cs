@@ -26,14 +26,16 @@ namespace QuanLyHangHoa
         NhaCungCapDAO nhaCungCapDAO = new NhaCungCapDAO();
         LoaiNhanVienDAO loaiNhanVienDAO = new LoaiNhanVienDAO();
         PhieuNhapDAO phieuNhapDAO = new PhieuNhapDAO();
+        PhieuXuatDAO phieuXuatDAO = new PhieuXuatDAO();
         NhanVienDAO nhanVienDAO = new NhanVienDAO();
+        KhacHangDAO khacHangDAO = new KhacHangDAO();
 
         private DataTable dtHanghoa;
         private DataTable dtNhomhanghoa;
         private DataTable dtNhaCung;
 
 
-        private DataTable dtHangNhap;
+        private DataTable dtXuat;
         private void txtMaHang_TextChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < dtHanghoa.Rows.Count; i++)
@@ -80,17 +82,16 @@ namespace QuanLyHangHoa
             dtNgayNhap.Format = DateTimePickerFormat.Custom;
             dtNgayNhap.CustomFormat = "dd-MM-yyyy";
 
-
-            txtPhieuXuat.Text = phieuNhapDAO.SinhMaPhieuNhap();
+            txtMaPhieuXuat.Text = phieuXuatDAO.SinhMaPhieuXuat();
 
             //create datatable hang nhap
-            dtHangNhap = new DataTable();
-            dtHangNhap.Columns.Add("mamathang", typeof(String));
-            dtHangNhap.Columns.Add("tenmathang", typeof(String));
-            dtHangNhap.Columns.Add("soluong", typeof(String));
-            dtHangNhap.Columns.Add("dongia", typeof(String));
-            dtHangNhap.Columns.Add("thanhtien", typeof(String));
-            dgvHangNhap.DataSource = dtHangNhap;
+            dtXuat = new DataTable();
+            dtXuat.Columns.Add("mamathang", typeof(String));
+            dtXuat.Columns.Add("tenmathang", typeof(String));
+            dtXuat.Columns.Add("soluong", typeof(String));
+            dtXuat.Columns.Add("dongia", typeof(String));
+            dtXuat.Columns.Add("thanhtien", typeof(String));
+            dgvHangNhap.DataSource = dtXuat;
 
             dtHanghoa = hangHoaDAO.LayDanhSachMatHang();
             dtNhomhanghoa = nhomHangHoaDAO.LayTatCaNhomHangHoa();
@@ -104,6 +105,12 @@ namespace QuanLyHangHoa
             cboNhaCungCap.DisplayMember = "tennhacungcap";
             cboNhaCungCap.ValueMember = "manhacungcap";
             cboNhaCungCap.DataSource = dtNhaCung;
+
+            //lấy danh sách khách hàng
+            cboKhachHang.ValueMember = "MaKH";
+            cboKhachHang.DisplayMember = "TenKH";
+            cboKhachHang.DataSource = khacHangDAO.LayTatCaKhachHang();
+
 
 
             AutoCompleteStringCollection sourceMaHang = new AutoCompleteStringCollection();
@@ -134,6 +141,7 @@ namespace QuanLyHangHoa
                 if (datarow["tenmathang"].ToString().Equals(txtTenHang.Text))
                 {
                     txtMaHang.Text = datarow["mamathang"].ToString();
+                    txtGia.Text = datarow["dongia"].ToString();
                     break;
                 }
                 else
@@ -169,7 +177,7 @@ namespace QuanLyHangHoa
                 return;
             }
             bool tontai = false;
-            foreach (DataRow item in dtHangNhap.Rows)
+            foreach (DataRow item in dtXuat.Rows)
             {
                 if (item["mamathang"].Equals(txtMaHang.Text))
                 {
@@ -181,13 +189,28 @@ namespace QuanLyHangHoa
                 MessageBox.Show("Mặt hàng đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            DataRow dr = dtHangNhap.NewRow();
+
+
+            //kiểm tra số lượng hàng tồn kho
+            DataTable dtHangTemp = hangHoaDAO.LayHangHoaTheoMa(txtMaHang.Text);
+            if (dtHangTemp != null && dtHanghoa.Rows.Count > 0)
+            {
+                int soluong = Convert.ToInt32(dtHangTemp.Rows[0]["soluong"]);
+                if (soluong < Convert.ToInt32(txtSoLuong.Text))
+                {
+                    MessageBox.Show("Số lượng tồn kho không đủ. Hiện tại còn !" + soluong + "  sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+
+            DataRow dr = dtXuat.NewRow();
             dr["mamathang"] = txtMaHang.Text;
             dr["tenmathang"] = txtTenHang.Text;
             dr["soluong"] = txtSoLuong.Text;
             dr["dongia"] = txtGia.Text;
             dr["thanhtien"] = Convert.ToInt32(txtSoLuong.Text) * Convert.ToSingle(txtGia.Text);
-            dtHangNhap.Rows.Add(dr);
+            dtXuat.Rows.Add(dr);
 
         }
 
@@ -198,7 +221,7 @@ namespace QuanLyHangHoa
 
         private void LamMoi()
         {
-            txtPhieuXuat.Text = phieuNhapDAO.SinhMaPhieuNhap();
+            txtMaPhieuXuat.Text = phieuNhapDAO.SinhMaPhieuNhap();
             foreach (Control item in this.grboxMatHang.Controls)
             {
                 if (item is TextBox)
@@ -223,24 +246,29 @@ namespace QuanLyHangHoa
 
         private void btnXuatHang_Click(object sender, EventArgs e)
         {
-            if (dtHangNhap == null || dtHangNhap.Rows.Count == 0)
+            if (dtXuat == null || dtXuat.Rows.Count == 0)
             {
                 MessageBox.Show("Vui tạo danh sách mặt hàng","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
-            PhieuNhap phieunhap = new PhieuNhap();
-            phieunhap.maphieunhap = txtPhieuXuat.Text;
-            phieunhap.ngaynhap = dtNgayNhap.Value;
-            phieunhap.manhanvien = frmMain.UserLogin1.Manhanvien.Manhanvien;
-            phieunhap.ghichu = txtGhiChu.Text;
+          
 
-           bool kt =  phieuNhapDAO.ThemPhieuNhapTransaction(phieunhap, dtHangNhap);
+
+            PhieuXuat phieuxuat = new PhieuXuat();
+            phieuxuat.maphieuxuat = txtMaPhieuXuat.Text;
+            phieuxuat.ngayxuat = dtNgayNhap.Value;
+            phieuxuat.manhanvien = frmMain.UserLogin1.Manhanvien.Manhanvien;
+            phieuxuat.ghichu = txtGhiChu.Text;
+            phieuxuat.MaKH = cboKhachHang.SelectedValue.ToString();
+
+
+           bool kt =  phieuXuatDAO.ThemPhieuXuatTransaction(phieuxuat, dtXuat);
            if (kt)
            {
                this.LamMoi();
-               if (dtHangNhap != null)
+               if (dtXuat != null)
                {
-                   dtHangNhap.Clear();
+                   dtXuat.Clear();
                }
            }
 
@@ -263,10 +291,10 @@ namespace QuanLyHangHoa
             if(currentrowindex != -1)
             {
                // dtHangNhap.Rows[currentrowindex]["mamathang"] = txtMaHang.Text;
-                dtHangNhap.Rows[currentrowindex]["tenmathang"] = txtTenHang.Text;
-                dtHangNhap.Rows[currentrowindex]["soluong"] = txtSoLuong.Text;
-                dtHangNhap.Rows[currentrowindex]["dongia"] = txtGia.Text;
-                dtHangNhap.Rows[currentrowindex]["thanhtien"] = int.Parse(txtSoLuong.Text) * float.Parse(txtGia.Text);
+                dtXuat.Rows[currentrowindex]["tenmathang"] = txtTenHang.Text;
+                dtXuat.Rows[currentrowindex]["soluong"] = txtSoLuong.Text;
+                dtXuat.Rows[currentrowindex]["dongia"] = txtGia.Text;
+                dtXuat.Rows[currentrowindex]["thanhtien"] = int.Parse(txtSoLuong.Text) * float.Parse(txtGia.Text);
                 this.LamMoi();
             }
           
@@ -279,7 +307,7 @@ namespace QuanLyHangHoa
                 DialogResult confirm = MessageBox.Show("Bạn có muốn xóa mã hàng  "+ txtMaHang.Text,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (confirm == DialogResult.Yes)
                 {
-                    dtHangNhap.Rows.RemoveAt(currentrowindex);
+                    dtXuat.Rows.RemoveAt(currentrowindex);
                     this.LamMoi();
                 }
             }
