@@ -36,6 +36,10 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=7.5.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -45,6 +49,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +65,18 @@
   <ItemGroup>
     <Compile Include="DAO\PhieuXuatDAO.cs" />
     <Compile Include="Entities\PhieuXuat.cs" />
+    <Compile Include="frmDangNhapDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhapDB.Designer.cs">
+      <DependentUpon>frmDangNhapDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainDB.Designer.cs">
+      <DependentUpon>frmMainDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +221,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="VNCurrency.cs" />
+    <EmbeddedResource Include="frmDangNhapDB.resx">
+      <DependentUpon>frmDangNhapDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainDB.resx">
+      <DependentUpon>frmMainDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXuatHang.resx">
       <DependentUpon>frmXuatHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +326,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon\businessmen.ico" />
+    <Content Include="icon\if_08_61472.png" />
+    <Content Include="icon\if_benchmarking_45359.png" />
+    <Content Include="icon\if_file-roller_23794.png" />
+    <Content Include="icon\if_fork3_62574.png" />
+    <Content Include="icon\if_invoice_87438.png" />
+    <Content Include="icon\if_private_mail_44691.png" />
+    <Content Include="icon\if_Profile_10593.png" />
+    <Content Include="icon\if_reminders_3572.png" />
+    <Content Include="icon\if_Shipping3_62592.png" />
+    <Content Include="icon\if_Shipping6_62595.png" />
+    <Content Include="icon\if_Store_58829.png" />
+    <Content Include="icon\if_user_male_3699.png" />
     <Content Include="image\add.ico" />
     <Content Include="image\customer.ico" />
     <Content Include="image\insert.ico" />

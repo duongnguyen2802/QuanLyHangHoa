@@ -36,14 +36,26 @@ namespace QuanLyHangHoa
             user.Matkhau = txtMatKhau.Text.Trim();
 
             frmMain.UserLogin1 = userDAO.LayUserTheoTenDangNhapVaMK(user);
-
+            if (frmMain.UserLogin1 == null)
+            {
+              DialogResult ok =  MessageBox.Show("Sai thông tin đăng nhập", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+              if (ok == DialogResult.OK)
+              {
+                  return;
+                
+              }
+            }
+            else
+            {
+                //chuyen form
+            }
 
 
         }
 
         private void btThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
         }
     }
 }

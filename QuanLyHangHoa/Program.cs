@@ -16,7 +16,7 @@ namespace QuanLyHangHoa
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //form được chạy đầu tiên 
-            Application.Run(new frmMain());
+            Application.Run(new frmMainDB());
 
 
         }
