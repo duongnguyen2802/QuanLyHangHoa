@@ -25,7 +25,7 @@ namespace QuanLyHangHoa
         NhomHangHoaDAO nhomHangHoaDAO = new NhomHangHoaDAO();
         NhaCungCapDAO nhaCungCapDAO = new NhaCungCapDAO();
         LoaiNhanVienDAO loaiNhanVienDAO = new LoaiNhanVienDAO();
-        PhieuNhapDAO phieuNhapDAO = new PhieuNhapDAO();
+        //PhieuNhapDAO phieuNhapDAO = new PhieuNhapDAO();
         PhieuXuatDAO phieuXuatDAO = new PhieuXuatDAO();
         NhanVienDAO nhanVienDAO = new NhanVienDAO();
         KhacHangDAO khacHangDAO = new KhacHangDAO();
@@ -221,7 +221,7 @@ namespace QuanLyHangHoa
 
         private void LamMoi()
         {
-            txtMaPhieuXuat.Text = phieuNhapDAO.SinhMaPhieuNhap();
+            txtMaPhieuXuat.Text = phieuXuatDAO.SinhMaPhieuXuat();
             foreach (Control item in this.grboxMatHang.Controls)
             {
                 if (item is TextBox)
