@@ -126,6 +126,7 @@
             // 
             // dgvNhomHangHoa
             // 
+            this.dgvNhomHangHoa.AllowUserToAddRows = false;
             this.dgvNhomHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhomHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.manhomhanghoa,

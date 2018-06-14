@@ -20,13 +20,15 @@ namespace QuanLyHangHoa.DAO
        
         public bool ThemNhomHangHoa(NhomHangHoa nhomhanghoa)
         {
-            string sql = "insert into nhomhanghoa(tennhomhanghoa) values(@tennhomhanghoa)";
+            string sql = "insert into nhomhanghoa(tennhomhanghoa,code) values(@tennhomhanghoa,@code)";
             List<string> parameters = new List<string>();
             List<object> values = new List<object>();
 
              //khoi tao tham so va gia tri
             parameters.Add("tennhomhanghoa");
             values.Add(nhomhanghoa.Tennhomhanghoa);
+            parameters.Add("code");
+            values.Add(nhomhanghoa.Code);
             return dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sql, parameters, values);
         }
 
