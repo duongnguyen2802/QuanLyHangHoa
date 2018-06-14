@@ -30,12 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainDB));
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbtnSearchHangHoa = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSearchNhanVien = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSearchKhachHang = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnSearchNhaCungCap = new System.Windows.Forms.ToolStripButton();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.toolStripNhapXuatPhieu = new System.Windows.Forms.ToolStrip();
             this.tsbtnNhapHang = new System.Windows.Forms.ToolStripButton();
             this.tsbtnXuatHang = new System.Windows.Forms.ToolStripButton();
             this.tsbtnQuanLyPhieuNhap = new System.Windows.Forms.ToolStripButton();
             this.tsbtnQuanLyPhieuXuat = new System.Windows.Forms.ToolStripButton();
+            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.toolStripHeThong = new System.Windows.Forms.ToolStrip();
+            this.tsbtnDangNhap = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnDangKy = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnDangXuat = new System.Windows.Forms.ToolStripButton();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.toolStripQuanLy = new System.Windows.Forms.ToolStrip();
             this.tsbtnNhanVien = new System.Windows.Forms.ToolStripButton();
@@ -43,13 +54,10 @@
             this.tsbtNhaCungCap = new System.Windows.Forms.ToolStripButton();
             this.tsbtnNhomHangHoa = new System.Windows.Forms.ToolStripButton();
             this.tsbtnQuanLyHangHoa = new System.Windows.Forms.ToolStripButton();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.toolStripHeThong = new System.Windows.Forms.ToolStrip();
-            this.tsbtnDangNhap = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnDangKy = new System.Windows.Forms.ToolStripButton();
             this.ribbonHeThong = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonQuanLy = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonNhapXuatPhieu = new DevComponents.DotNetBar.RibbonTabItem();
+            this.ribbonTimKiem = new DevComponents.DotNetBar.RibbonTabItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.statusStripThongTinDangNhap = new System.Windows.Forms.StatusStrip();
@@ -74,28 +82,31 @@
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
-            this.tsbtnDangXuat = new System.Windows.Forms.ToolStripButton();
             this.ribbonControl1.SuspendLayout();
+            this.ribbonPanel4.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.toolStripNhapXuatPhieu.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
-            this.toolStripQuanLy.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.toolStripHeThong.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
+            this.toolStripQuanLy.SuspendLayout();
             this.statusStripThongTinDangNhap.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.ribbonHeThong,
             this.ribbonQuanLy,
-            this.ribbonNhapXuatPhieu});
+            this.ribbonNhapXuatPhieu,
+            this.ribbonTimKiem});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(4, 1);
             this.ribbonControl1.Name = "ribbonControl1";
@@ -108,6 +119,82 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 1;
             this.ribbonControl1.Text = "ribbonControl1";
+            // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel4.Controls.Add(this.toolStrip1);
+            this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 55);
+            this.ribbonPanel4.Name = "ribbonPanel4";
+            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel4.Size = new System.Drawing.Size(903, 97);
+            this.ribbonPanel4.TabIndex = 4;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnSearchHangHoa,
+            this.tsbtnSearchNhanVien,
+            this.tsbtnSearchKhachHang,
+            this.tsbtnSearchNhaCungCap});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(897, 97);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbtnSearchHangHoa
+            // 
+            this.tsbtnSearchHangHoa.AutoSize = false;
+            this.tsbtnSearchHangHoa.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSearchHangHoa.Image")));
+            this.tsbtnSearchHangHoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSearchHangHoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSearchHangHoa.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.tsbtnSearchHangHoa.Name = "tsbtnSearchHangHoa";
+            this.tsbtnSearchHangHoa.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnSearchHangHoa.Text = "Hàng hóa";
+            this.tsbtnSearchHangHoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSearchHangHoa.Click += new System.EventHandler(this.tsbtnSearchHangHoa_Click);
+            // 
+            // tsbtnSearchNhanVien
+            // 
+            this.tsbtnSearchNhanVien.AutoSize = false;
+            this.tsbtnSearchNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSearchNhanVien.Image")));
+            this.tsbtnSearchNhanVien.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSearchNhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSearchNhanVien.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.tsbtnSearchNhanVien.Name = "tsbtnSearchNhanVien";
+            this.tsbtnSearchNhanVien.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnSearchNhanVien.Text = "Nhân viên";
+            this.tsbtnSearchNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbtnSearchKhachHang
+            // 
+            this.tsbtnSearchKhachHang.AutoSize = false;
+            this.tsbtnSearchKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSearchKhachHang.Image")));
+            this.tsbtnSearchKhachHang.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSearchKhachHang.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSearchKhachHang.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.tsbtnSearchKhachHang.Name = "tsbtnSearchKhachHang";
+            this.tsbtnSearchKhachHang.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnSearchKhachHang.Text = "Khách hàng";
+            this.tsbtnSearchKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSearchKhachHang.Click += new System.EventHandler(this.tsbtnSearchKhachHang_Click);
+            // 
+            // tsbtnSearchNhaCungCap
+            // 
+            this.tsbtnSearchNhaCungCap.AutoSize = false;
+            this.tsbtnSearchNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnSearchNhaCungCap.Image")));
+            this.tsbtnSearchNhaCungCap.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnSearchNhaCungCap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnSearchNhaCungCap.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.tsbtnSearchNhaCungCap.Name = "tsbtnSearchNhaCungCap";
+            this.tsbtnSearchNhaCungCap.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnSearchNhaCungCap.Text = "Nhà cung cấp";
+            this.tsbtnSearchNhaCungCap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // ribbonPanel3
             // 
@@ -186,6 +273,68 @@
             this.tsbtnQuanLyPhieuXuat.Text = "Phiếu xuất";
             this.tsbtnQuanLyPhieuXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnQuanLyPhieuXuat.Click += new System.EventHandler(this.tsbtnQuanLyPhieuXuat_Click);
+            // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel1.Controls.Add(this.toolStripHeThong);
+            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 55);
+            this.ribbonPanel1.Name = "ribbonPanel1";
+            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel1.Size = new System.Drawing.Size(903, 97);
+            this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
+            // 
+            // toolStripHeThong
+            // 
+            this.toolStripHeThong.AutoSize = false;
+            this.toolStripHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.toolStripHeThong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnDangNhap,
+            this.tsbtnDangKy,
+            this.tsbtnDangXuat});
+            this.toolStripHeThong.Location = new System.Drawing.Point(3, 0);
+            this.toolStripHeThong.Name = "toolStripHeThong";
+            this.toolStripHeThong.Size = new System.Drawing.Size(897, 97);
+            this.toolStripHeThong.TabIndex = 0;
+            this.toolStripHeThong.Text = "toolStrip1";
+            // 
+            // tsbtnDangNhap
+            // 
+            this.tsbtnDangNhap.AutoSize = false;
+            this.tsbtnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDangNhap.Image")));
+            this.tsbtnDangNhap.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnDangNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDangNhap.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
+            this.tsbtnDangNhap.Name = "tsbtnDangNhap";
+            this.tsbtnDangNhap.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnDangNhap.Text = "Đăng nhập";
+            this.tsbtnDangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbtnDangKy
+            // 
+            this.tsbtnDangKy.AutoSize = false;
+            this.tsbtnDangKy.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDangKy.Image")));
+            this.tsbtnDangKy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnDangKy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDangKy.Name = "tsbtnDangKy";
+            this.tsbtnDangKy.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnDangKy.Text = "Đăng ký";
+            this.tsbtnDangKy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnDangKy.Click += new System.EventHandler(this.tsbtnDangKy_Click);
+            // 
+            // tsbtnDangXuat
+            // 
+            this.tsbtnDangXuat.AutoSize = false;
+            this.tsbtnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDangXuat.Image")));
+            this.tsbtnDangXuat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbtnDangXuat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnDangXuat.Name = "tsbtnDangXuat";
+            this.tsbtnDangXuat.Size = new System.Drawing.Size(100, 77);
+            this.tsbtnDangXuat.Text = "Đăng xuất";
+            this.tsbtnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnDangXuat.Click += new System.EventHandler(this.tsbtnDangXuat_Click);
             // 
             // ribbonPanel2
             // 
@@ -280,58 +429,8 @@
             this.tsbtnQuanLyHangHoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnQuanLyHangHoa.Click += new System.EventHandler(this.tsbtnQuanLyHangHoa_Click);
             // 
-            // ribbonPanel1
-            // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel1.Controls.Add(this.toolStripHeThong);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 55);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(903, 97);
-            this.ribbonPanel1.TabIndex = 1;
-            // 
-            // toolStripHeThong
-            // 
-            this.toolStripHeThong.AutoSize = false;
-            this.toolStripHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.toolStripHeThong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbtnDangNhap,
-            this.tsbtnDangKy,
-            this.tsbtnDangXuat});
-            this.toolStripHeThong.Location = new System.Drawing.Point(3, 0);
-            this.toolStripHeThong.Name = "toolStripHeThong";
-            this.toolStripHeThong.Size = new System.Drawing.Size(897, 97);
-            this.toolStripHeThong.TabIndex = 0;
-            this.toolStripHeThong.Text = "toolStrip1";
-            // 
-            // tsbtnDangNhap
-            // 
-            this.tsbtnDangNhap.AutoSize = false;
-            this.tsbtnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDangNhap.Image")));
-            this.tsbtnDangNhap.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnDangNhap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnDangNhap.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
-            this.tsbtnDangNhap.Name = "tsbtnDangNhap";
-            this.tsbtnDangNhap.Size = new System.Drawing.Size(100, 77);
-            this.tsbtnDangNhap.Text = "Đăng nhập";
-            this.tsbtnDangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // tsbtnDangKy
-            // 
-            this.tsbtnDangKy.AutoSize = false;
-            this.tsbtnDangKy.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDangKy.Image")));
-            this.tsbtnDangKy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnDangKy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnDangKy.Name = "tsbtnDangKy";
-            this.tsbtnDangKy.Size = new System.Drawing.Size(100, 77);
-            this.tsbtnDangKy.Text = "Đăng ký";
-            this.tsbtnDangKy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnDangKy.Click += new System.EventHandler(this.tsbtnDangKy_Click);
-            // 
             // ribbonHeThong
             // 
-            this.ribbonHeThong.Checked = true;
             this.ribbonHeThong.ImagePaddingHorizontal = 8;
             this.ribbonHeThong.Name = "ribbonHeThong";
             this.ribbonHeThong.Panel = this.ribbonPanel1;
@@ -350,6 +449,14 @@
             this.ribbonNhapXuatPhieu.Name = "ribbonNhapXuatPhieu";
             this.ribbonNhapXuatPhieu.Panel = this.ribbonPanel3;
             this.ribbonNhapXuatPhieu.Text = "Nhập / Xuất / Phiếu";
+            // 
+            // ribbonTimKiem
+            // 
+            this.ribbonTimKiem.Checked = true;
+            this.ribbonTimKiem.ImagePaddingHorizontal = 8;
+            this.ribbonTimKiem.Name = "ribbonTimKiem";
+            this.ribbonTimKiem.Panel = this.ribbonPanel4;
+            this.ribbonTimKiem.Text = "Tìm kiếm";
             // 
             // buttonItem1
             // 
@@ -579,18 +686,6 @@
             this.buttonItem13.SubItemsExpandWidth = 24;
             this.buttonItem13.Text = "E&xit";
             // 
-            // tsbtnDangXuat
-            // 
-            this.tsbtnDangXuat.AutoSize = false;
-            this.tsbtnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnDangXuat.Image")));
-            this.tsbtnDangXuat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbtnDangXuat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnDangXuat.Name = "tsbtnDangXuat";
-            this.tsbtnDangXuat.Size = new System.Drawing.Size(100, 77);
-            this.tsbtnDangXuat.Text = "Đăng xuất";
-            this.tsbtnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnDangXuat.Click += new System.EventHandler(this.tsbtnDangXuat_Click);
-            // 
             // frmMainDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,15 +699,18 @@
             this.Load += new System.EventHandler(this.frmMainDB_Load);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
+            this.ribbonPanel4.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ribbonPanel3.ResumeLayout(false);
             this.toolStripNhapXuatPhieu.ResumeLayout(false);
             this.toolStripNhapXuatPhieu.PerformLayout();
-            this.ribbonPanel2.ResumeLayout(false);
-            this.toolStripQuanLy.ResumeLayout(false);
-            this.toolStripQuanLy.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
             this.toolStripHeThong.ResumeLayout(false);
             this.toolStripHeThong.PerformLayout();
+            this.ribbonPanel2.ResumeLayout(false);
+            this.toolStripQuanLy.ResumeLayout(false);
+            this.toolStripQuanLy.PerformLayout();
             this.statusStripThongTinDangNhap.ResumeLayout(false);
             this.statusStripThongTinDangNhap.PerformLayout();
             this.ResumeLayout(false);
@@ -667,6 +765,13 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem12;
         private DevComponents.DotNetBar.ButtonItem buttonItem13;
         private System.Windows.Forms.ToolStripButton tsbtnDangXuat;
+        private DevComponents.DotNetBar.RibbonPanel ribbonPanel4;
+        private DevComponents.DotNetBar.RibbonTabItem ribbonTimKiem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbtnSearchHangHoa;
+        private System.Windows.Forms.ToolStripButton tsbtnSearchNhanVien;
+        private System.Windows.Forms.ToolStripButton tsbtnSearchKhachHang;
+        private System.Windows.Forms.ToolStripButton tsbtnSearchNhaCungCap;
 
     }
 }

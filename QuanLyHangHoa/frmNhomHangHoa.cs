@@ -34,12 +34,27 @@ namespace QuanLyHangHoa
             }
             else
             {
+                bool kt = false;
+                //kiem tra ton tai code
+                foreach (DataGridViewRow item in dgvNhomHangHoa.Rows)
+                {
+                    if (item.Cells["code"].Value.ToString().Equals(txtCode.Text))
+                    {
+                        kt = true; break;
+                    }
+                }
+
+                if (kt)
+                {
+                    MessageBox.Show("Mã nhóm đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
 
                 NhomHangHoa nhomhanghoa = new NhomHangHoa();
                 //gán tên hàng hóa từ textbox vào đối tượng nhomhanghoa
                 nhomhanghoa.Tennhomhanghoa = txtTenNhom.Text;
-
+                nhomhanghoa.Code = txtCode.Text;
                 //thêm nhóm hàng hóa vào db
                 bool kiemtra = nhomhanghoaDAO.ThemNhomHangHoa(nhomhanghoa);
 
@@ -66,6 +81,8 @@ namespace QuanLyHangHoa
         {
             txtMaNhom.Text = string.Empty;
             txtTenNhom.Text = string.Empty;
+            txtCode.Text = string.Empty;
+            txtCode.Enabled = true;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -75,8 +92,12 @@ namespace QuanLyHangHoa
 
         private void dgvNhomHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaNhom.Text = dgvNhomHangHoa.CurrentRow.Cells[0].Value.ToString();
-            txtTenNhom.Text = dgvNhomHangHoa.CurrentRow.Cells[1].Value.ToString();
+            txtMaNhom.Text = dgvNhomHangHoa.CurrentRow.Cells["manhomhanghoa"].Value.ToString();
+            txtTenNhom.Text = dgvNhomHangHoa.CurrentRow.Cells["tennhomhanghoa"].Value.ToString();
+            txtCode.Text = dgvNhomHangHoa.CurrentRow.Cells["code"].Value.ToString();
+
+            txtCode.Enabled = false;
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -91,7 +112,9 @@ namespace QuanLyHangHoa
                 return;
             }
 
-            NhomHangHoa nhomhanghoa = new NhomHangHoa(Convert.ToInt32(txtMaNhom.Text), txtTenNhom.Text);
+            NhomHangHoa nhomhanghoa = new NhomHangHoa();
+            nhomhanghoa.Manhomhanghoa =  Convert.ToInt32(txtMaNhom.Text);
+            nhomhanghoa.Tennhomhanghoa = txtTenNhom.Text;
             //gán dữ liệu vào đối tượng
             //thêm nhóm hàng hóa vào db
             bool kiemtra = nhomhanghoaDAO.CapNhatNhomHangHoa(nhomhanghoa);

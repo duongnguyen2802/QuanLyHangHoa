@@ -1,0 +1,8 @@
+
+update user set tendangnhap = 'giamdoc01' where tendangnhap = 'ocean';
+update user set tendangnhap = 'thukho01' where tendangnhap = 'hoacavang';
+
+update nhomhanghoa set code = 'HTD' where manhomhanghoa = 2;
+update nhomhanghoa set code = 'CTR' where manhomhanghoa = 3;
+update nhomhanghoa set code = 'HGD' where manhomhanghoa = 6;
+update nhomhanghoa set code = 'DA' where manhomhanghoa = 7;

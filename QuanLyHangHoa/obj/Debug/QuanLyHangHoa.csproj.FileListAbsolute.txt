@@ -84,3 +84,5 @@ E:\MyProject\hoacavang\QuanLyHangHoaNew\QuanLyHangHoa\QuanLyHangHoa\bin\Debug\De
 E:\MyProject\hoacavang\QuanLyHangHoaNew\QuanLyHangHoa\QuanLyHangHoa\bin\Debug\MySql.Data.xml
 E:\MyProject\hoacavang\QuanLyHangHoaNew\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.exe
 E:\MyProject\hoacavang\QuanLyHangHoaNew\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.pdb
+E:\MyProject\hoacavang\QuanLyHangHoaNew\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmTimKiemHangHoa.resources
+E:\MyProject\hoacavang\QuanLyHangHoaNew\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmTimKiemKhachHang.resources

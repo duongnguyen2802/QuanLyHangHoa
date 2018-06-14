@@ -37,9 +37,11 @@
             this.btnXoas = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.dgvNhomHangHoa = new System.Windows.Forms.DataGridView();
-            this.manhomhanghoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tennhomhanghoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.manhomhanghoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tennhomhanghoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomHangHoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,10 +57,11 @@
             // txtMaNhom
             // 
             this.txtMaNhom.Enabled = false;
-            this.txtMaNhom.Location = new System.Drawing.Point(130, 57);
+            this.txtMaNhom.Location = new System.Drawing.Point(432, 91);
             this.txtMaNhom.Name = "txtMaNhom";
-            this.txtMaNhom.Size = new System.Drawing.Size(232, 20);
+            this.txtMaNhom.Size = new System.Drawing.Size(37, 20);
             this.txtMaNhom.TabIndex = 1;
+            this.txtMaNhom.Visible = false;
             // 
             // label2
             // 
@@ -126,6 +129,7 @@
             this.dgvNhomHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhomHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.manhomhanghoa,
+            this.code,
             this.tennhomhanghoa});
             this.dgvNhomHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvNhomHangHoa.Location = new System.Drawing.Point(0, 192);
@@ -133,19 +137,6 @@
             this.dgvNhomHangHoa.Size = new System.Drawing.Size(541, 109);
             this.dgvNhomHangHoa.TabIndex = 6;
             this.dgvNhomHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhomHangHoa_CellClick);
-            // 
-            // manhomhanghoa
-            // 
-            this.manhomhanghoa.DataPropertyName = "manhomhanghoa";
-            this.manhomhanghoa.HeaderText = "Mã nhóm";
-            this.manhomhanghoa.Name = "manhomhanghoa";
-            // 
-            // tennhomhanghoa
-            // 
-            this.tennhomhanghoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tennhomhanghoa.DataPropertyName = "tennhomhanghoa";
-            this.tennhomhanghoa.HeaderText = "Tên nhóm hàng hóa";
-            this.tennhomhanghoa.Name = "tennhomhanghoa";
             // 
             // label3
             // 
@@ -160,12 +151,40 @@
             this.label3.Text = "QUẢN LÝ NHÓM HÀNG HÓA";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(130, 52);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(232, 20);
+            this.txtCode.TabIndex = 8;
+            // 
+            // manhomhanghoa
+            // 
+            this.manhomhanghoa.DataPropertyName = "manhomhanghoa";
+            this.manhomhanghoa.HeaderText = "Mã nhóm";
+            this.manhomhanghoa.Name = "manhomhanghoa";
+            this.manhomhanghoa.Visible = false;
+            // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Mã nhóm";
+            this.code.Name = "code";
+            // 
+            // tennhomhanghoa
+            // 
+            this.tennhomhanghoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tennhomhanghoa.DataPropertyName = "tennhomhanghoa";
+            this.tennhomhanghoa.HeaderText = "Tên nhóm hàng hóa";
+            this.tennhomhanghoa.Name = "tennhomhanghoa";
+            // 
             // frmNhomHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(541, 301);
+            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvNhomHangHoa);
             this.Controls.Add(this.btnLamMoi);
@@ -197,8 +216,10 @@
         private System.Windows.Forms.Button btnXoas;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridView dgvNhomHangHoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn manhomhanghoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tennhomhanghoa;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manhomhanghoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tennhomhanghoa;
     }
 }

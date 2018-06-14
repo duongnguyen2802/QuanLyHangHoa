@@ -130,5 +130,22 @@ namespace QuanLyHangHoa.DAO
             return dataAccessHelper.ThuThiCauLenhInsertOrUpdateOrDelete(sql, parameters, values);
         }
 
+        public DataTable LayHangHoaTheoMaHoaTen(string giatri, bool isMa)
+        {
+            
+            StringBuilder sbSQL = new StringBuilder("select * from hanghoa where  ");
+            if (isMa)
+            {
+                sbSQL.Append("mamathang = '" + giatri + "'");
+            }
+            else
+            {
+                sbSQL.Append("  tenmathang like '%"+giatri+"' ");
+            } 
+            return dataAccessHelper.GetData(sbSQL.ToString());
+
+
+
+        }
     }
 }

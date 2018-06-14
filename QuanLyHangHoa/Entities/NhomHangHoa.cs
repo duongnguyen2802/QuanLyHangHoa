@@ -9,15 +9,19 @@ namespace QuanLyHangHoa.Entities
     {
         private int manhomhanghoa;
         private string tennhomhanghoa;
+        private string code;
+
+        
         public NhomHangHoa()
         {
  
         }
 
-        public NhomHangHoa(int manhomhanghoa, string tennhomhanghoa)
+        public NhomHangHoa(int manhomhanghoa, string tennhomhanghoa, string code)
         {
             this.manhomhanghoa = manhomhanghoa;
             this.tennhomhanghoa = tennhomhanghoa;
+            this.code = code;
         }
 
         public int Manhomhanghoa
@@ -31,6 +35,11 @@ namespace QuanLyHangHoa.Entities
         {
             get { return tennhomhanghoa; }
             set { tennhomhanghoa = value; }
+        }
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
         }
 
     }

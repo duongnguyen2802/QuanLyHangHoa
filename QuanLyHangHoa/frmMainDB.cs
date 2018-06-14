@@ -366,5 +366,51 @@ namespace QuanLyHangHoa
           
         }
 
+        private void tsbtnSearchHangHoa_Click(object sender, EventArgs e)
+        {
+            if (!IsShow("frmTimKiemHangHoa"))
+            {
+                frmTimKiemHangHoa frmTimKiemHangHoa = new frmTimKiemHangHoa();
+                frmTimKiemHangHoa.StartPosition = FormStartPosition.CenterScreen;
+                frmTimKiemHangHoa.MdiParent = this;
+                frmTimKiemHangHoa.Show();
+            }
+            else
+            {
+                foreach (Form frmTimKiemHangHoa in this.MdiChildren)
+                {
+                    if (frmTimKiemHangHoa.Name == "frmTimKiemHangHoa")
+                    {
+                        frmTimKiemHangHoa.Activate();
+                        break;
+                    }
+
+                }
+            }
+        }
+
+        private void tsbtnSearchKhachHang_Click(object sender, EventArgs e)
+        {
+            if (!IsShow("frmTimKiemKhachHang"))
+            {
+                frmTimKiemKhachHang frmTimKiemKhachHang = new frmTimKiemKhachHang();
+                frmTimKiemKhachHang.StartPosition = FormStartPosition.CenterScreen;
+                frmTimKiemKhachHang.MdiParent = this;
+                frmTimKiemKhachHang.Show();
+            }
+            else
+            {
+                foreach (Form frmTimKiemKhachHang in this.MdiChildren)
+                {
+                    if (frmTimKiemKhachHang.Name == "frmTimKiemKhachHang")
+                    {
+                        frmTimKiemKhachHang.Activate();
+                        break;
+                    }
+
+                }
+            }
+        }
+
     }
 }
