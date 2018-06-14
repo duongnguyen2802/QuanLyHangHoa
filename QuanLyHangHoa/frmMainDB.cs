@@ -24,14 +24,18 @@ namespace QuanLyHangHoa
             get { return UserLogin; }
             set { UserLogin = value; }
         }
-
+        private int landangnhap = 1;
         private void frmMainDB_Load(object sender, EventArgs e)
         {
             //frmDangNhap frm = new frmDangNhap();
             //frm.ShowDialog();       
             lblTenDangNhapHienTai.Visible = false;
-            frmDangNhapDB dangnhap = new frmDangNhapDB();
-            dangnhap.ShowDialog();
+            if (landangnhap < 2)
+            {
+                frmDangNhapDB dangnhap = new frmDangNhapDB();
+                dangnhap.ShowDialog();
+            }
+           
 
 
             if (UserLogin1 != null)
@@ -45,6 +49,21 @@ namespace QuanLyHangHoa
                 //kiem tra phan quyen
                 switch (UserLogin1.Manhomuser)
                 {
+                    //giam doc
+                    case 1:
+                        {
+                            tsbtnDangKy.Enabled = true;
+                            tsbtnQuanLyHangHoa.Enabled = true;
+                            tsbtnKhachHang.Enabled = true;
+                            tsbtnNhanVien.Enabled = true;
+                            tsbtNhaCungCap.Enabled = true;
+                            tsbtnNhomHangHoa.Enabled = true;
+                            tsbtnNhapHang.Enabled = true;
+                            tsbtnXuatHang.Enabled = true;
+                            tsbtnQuanLyPhieuNhap.Enabled = true;
+                            tsbtnQuanLyPhieuXuat.Enabled = true;
+                            break;
+                        }
                     //thu kho
                     case 2:
                         {
@@ -73,6 +92,7 @@ namespace QuanLyHangHoa
                         //giám đốc 
                     default: break;
                 }
+                landangnhap++;
 
 
             }
@@ -340,6 +360,8 @@ namespace QuanLyHangHoa
                 lblTenDangNhapHienTai.Visible = false;
                 frmDangNhapDB dangnhap = new frmDangNhapDB();
                 dangnhap.ShowDialog();
+                frmMainDB_Load(sender, e);
+                lblTenDangNhapHienTai.Visible = true;
             }
           
         }
