@@ -53,3 +53,5 @@ E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanL
 E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmXuatHang.resources
 E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmMainDB.resources
 E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmDangNhapDB.resources
+E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmQuanLyPhieuXuat.resources
+E:\MyProject\hoacavang\QuanLyHangHoa\QuanLyHangHoa\QuanLyHangHoa\obj\Debug\QuanLyHangHoa.frmBCPhieuXuat.resources

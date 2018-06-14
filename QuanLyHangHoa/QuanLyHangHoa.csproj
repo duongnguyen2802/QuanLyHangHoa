@@ -64,7 +64,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\PhieuXuatDAO.cs" />
+    <Compile Include="DSPhieuXuat.cs">
+      <DependentUpon>DSPhieuXuat.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSPhieuXuat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPhieuXuat.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entities\PhieuXuat.cs" />
+    <Compile Include="frmBCPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCPhieuXuat.Designer.cs">
+      <DependentUpon>frmBCPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhapDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +91,12 @@
     </Compile>
     <Compile Include="frmMainDB.Designer.cs">
       <DependentUpon>frmMainDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyPhieuXuat.Designer.cs">
+      <DependentUpon>frmQuanLyPhieuXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="frmXuatHang.cs">
       <SubType>Form</SubType>
@@ -220,12 +241,24 @@
       <DependentUpon>rptPhieuNhap.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptPhieuXuatKho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPhieuXuatKho.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VNCurrency.cs" />
+    <EmbeddedResource Include="frmBCPhieuXuat.resx">
+      <DependentUpon>frmBCPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhapDB.resx">
       <DependentUpon>frmDangNhapDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainDB.resx">
       <DependentUpon>frmMainDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyPhieuXuat.resx">
+      <DependentUpon>frmQuanLyPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmXuatHang.resx">
       <DependentUpon>frmXuatHang.cs</DependentUpon>
@@ -293,6 +326,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPhieuNhap.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptPhieuXuatKho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPhieuXuatKho.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="DSet.xsc">
       <DependentUpon>DSet.xsd</DependentUpon>
     </None>
@@ -315,6 +352,17 @@
     <None Include="DSPhieuNhap.xss">
       <DependentUpon>DSPhieuNhap.xsd</DependentUpon>
     </None>
+    <None Include="DSPhieuXuat.xsc">
+      <DependentUpon>DSPhieuXuat.xsd</DependentUpon>
+    </None>
+    <None Include="DSPhieuXuat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPhieuXuat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSPhieuXuat.xss">
+      <DependentUpon>DSPhieuXuat.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -332,9 +380,11 @@
     <Content Include="icon\if_file-roller_23794.png" />
     <Content Include="icon\if_fork3_62574.png" />
     <Content Include="icon\if_invoice_87438.png" />
+    <Content Include="icon\if_Login-Key_33991.png" />
     <Content Include="icon\if_private_mail_44691.png" />
     <Content Include="icon\if_Profile_10593.png" />
     <Content Include="icon\if_reminders_3572.png" />
+    <Content Include="icon\if_secure-server-px-png_63474.png" />
     <Content Include="icon\if_Shipping3_62592.png" />
     <Content Include="icon\if_Shipping6_62595.png" />
     <Content Include="icon\if_Store_58829.png" />

@@ -62,7 +62,7 @@ namespace QuanLyHangHoa
         {
             if (string.IsNullOrEmpty(txtMaPhieu.Text))
             {
-
+                MessageBox.Show("Vui lòng chọn phiếu cần in","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {

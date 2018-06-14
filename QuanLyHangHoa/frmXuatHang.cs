@@ -72,9 +72,9 @@ namespace QuanLyHangHoa
 
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
-            if(frmMain.UserLogin1 != null)
+            if (frmMainDB.UserLogin1 != null)
             {
-                txtNhanVien.Text = frmMain.UserLogin1.Manhanvien.Tennhanvien;
+                txtNhanVien.Text = frmMainDB.UserLogin1.Manhanvien.Tennhanvien;
 
             }
             
@@ -257,7 +257,7 @@ namespace QuanLyHangHoa
             PhieuXuat phieuxuat = new PhieuXuat();
             phieuxuat.maphieuxuat = txtMaPhieuXuat.Text;
             phieuxuat.ngayxuat = dtNgayNhap.Value;
-            phieuxuat.manhanvien = frmMain.UserLogin1.Manhanvien.Manhanvien;
+            phieuxuat.manhanvien = frmMainDB.UserLogin1.Manhanvien.Manhanvien;
             phieuxuat.ghichu = txtGhiChu.Text;
             phieuxuat.MaKH = cboKhachHang.SelectedValue.ToString();
 
@@ -265,11 +265,16 @@ namespace QuanLyHangHoa
            bool kt =  phieuXuatDAO.ThemPhieuXuatTransaction(phieuxuat, dtXuat);
            if (kt)
            {
+               MessageBox.Show("Xuất hàng thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                this.LamMoi();
                if (dtXuat != null)
                {
                    dtXuat.Clear();
                }
+           }
+           else
+           {
+               MessageBox.Show("Xuất hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
            }
 
         }

@@ -32,11 +32,54 @@ namespace QuanLyHangHoa
             lblTenDangNhapHienTai.Visible = false;
             frmDangNhapDB dangnhap = new frmDangNhapDB();
             dangnhap.ShowDialog();
-            if (UserLogin1 != null) 
+
+
+            if (UserLogin1 != null)
             {
                 lblTenDangNhapHienTai.Visible = true;
                 lblTenDangNhapHienTai.Text = "Chúc " + UserLogin.Manhanvien.Tennhanvien + " một ngày làm việc vui vẻ";
+
+                //đăng nhập thành công ẩn chức nắng đăng nhập
+                tsbtnDangNhap.Enabled = false;
+
+                //kiem tra phan quyen
+                switch (UserLogin1.Manhomuser)
+                {
+                    //thu kho
+                    case 2:
+                        {
+                            tsbtnDangKy.Enabled = false;
+                            //tsbtnQuanLyHangHoa.Visible = false;
+                            tsbtnKhachHang.Enabled = false;
+                            tsbtnNhanVien.Enabled = false;
+                            tsbtNhaCungCap.Enabled = false;
+                            break;
+                        }
+                        //nhanvien kinh doanh
+                    case 3:
+                        {
+                            tsbtnDangKy.Enabled = false;
+                            tsbtnQuanLyHangHoa.Enabled = false;
+                            tsbtnKhachHang.Enabled = false;
+                            tsbtnNhanVien.Enabled = false;
+                            tsbtNhaCungCap.Enabled = false;
+                            tsbtnNhomHangHoa.Enabled = false;
+                            tsbtnNhapHang.Enabled = false;
+                            tsbtnXuatHang.Enabled = false;
+                            tsbtnQuanLyPhieuNhap.Enabled = false;
+                            tsbtnQuanLyPhieuXuat.Enabled = false;
+                            break;
+                        }
+                        //giám đốc 
+                    default: break;
+                }
+
+
             }
+
+
+
+
         }
 
 
@@ -58,8 +101,8 @@ namespace QuanLyHangHoa
 
         private void tsbtnNhanVien_Click(object sender, EventArgs e)
         {
-           
-          
+
+
             if (!IsShow("frmNhanVien"))
             {
                 frmNhanVien NV = new frmNhanVien();
@@ -71,12 +114,12 @@ namespace QuanLyHangHoa
             {
                 foreach (Form frmNhanVien in this.MdiChildren)
                 {
-                    if (frmNhanVien.Name == "frmNhanVien") 
+                    if (frmNhanVien.Name == "frmNhanVien")
                     {
                         frmNhanVien.Activate();
                         break;
                     }
-                    
+
                 }
             }
         }
@@ -244,7 +287,25 @@ namespace QuanLyHangHoa
 
         private void tsbtnQuanLyPhieuXuat_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đang làm phiếu xuất");
+            if (!IsShow("frmQuanLyPhieuXuat"))
+            {
+                frmQuanLyPhieuXuat phieuxuat = new frmQuanLyPhieuXuat();
+                phieuxuat.StartPosition = FormStartPosition.CenterScreen;
+                phieuxuat.MdiParent = this;
+                phieuxuat.Show();
+            }
+            else
+            {
+                foreach (Form frmQuanLyPhieuXuat in this.MdiChildren)
+                {
+                    if (frmQuanLyPhieuXuat.Name == "frmQuanLyPhieuXuat")
+                    {
+                        frmQuanLyPhieuXuat.Activate();
+                        break;
+                    }
+
+                }
+            }
         }
 
         private void tsbtnDangKy_Click(object sender, EventArgs e)
@@ -268,6 +329,19 @@ namespace QuanLyHangHoa
 
                 }
             }
+        }
+
+        private void tsbtnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Bạn có muốn đăng xuất tài khoản?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                UserLogin = null;
+                lblTenDangNhapHienTai.Visible = false;
+                frmDangNhapDB dangnhap = new frmDangNhapDB();
+                dangnhap.ShowDialog();
+            }
+          
         }
 
     }

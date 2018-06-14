@@ -126,6 +126,15 @@ namespace QuanLyHangHoa.DAO
                 user.Manhomuser = int.Parse(dtUserChucNang.Rows[0]["manhomuser"].ToString());
                 user.Email = dtUserChucNang.Rows[0]["email"] == null ? string.Empty : dtUserChucNang.Rows[0]["email"].ToString();
                 user.Dienthoai = dtUserChucNang.Rows[0]["dienthoai"] == null ? string.Empty : dtUserChucNang.Rows[0]["dienthoai"].ToString();
+
+
+                objReturnUser.Tendangnhap = dtUserChucNang.Rows[0]["tendangnhap"].ToString();
+                objReturnUser.Matkhau = dtUserChucNang.Rows[0]["matkhau"].ToString();
+                objReturnUser.Manhomuser = int.Parse(dtUserChucNang.Rows[0]["manhomuser"].ToString());
+                objReturnUser.Email = dtUserChucNang.Rows[0]["email"] == null ? string.Empty : dtUserChucNang.Rows[0]["email"].ToString();
+                objReturnUser.Dienthoai = dtUserChucNang.Rows[0]["dienthoai"] == null ? string.Empty : dtUserChucNang.Rows[0]["dienthoai"].ToString();
+                
+              
             }
             else
             {
@@ -166,6 +175,7 @@ namespace QuanLyHangHoa.DAO
                    
                     
                 }
+
                 objReturnUser.Manhanvien = nhanvien;
                 objReturnUser.DsChucNang = lsChucNang;
 
